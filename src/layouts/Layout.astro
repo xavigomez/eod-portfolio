@@ -1,22 +1,32 @@
+---
+import "~/styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Elisabet Osuna - Product Designer</title>
+    </head>
+    <body
+        class="min-h-screen lg:flex lg:flex-row lg:p-8 xl:p-16 2xl:p-24 lg:gap-16 xl:gap-24 2xl:gap-36"
+    >
+        <header class="px-4 py-2 sm:px-8 sm:py-4 lg:p-0 bg-emerald-300">
+            <div class="flex justify-between items-center lg:hidden">
+                <div>name</div>
+                <div>actions</div>
+            </div>
+            <aside
+                class="hidden lg:flex lg:w-60 lg:shrink-0 flex-col bg-amber-200"
+            >
+                <slot name="sidebar" />
+            </aside>
+        </header>
+        <main class="flex-1">
+            <slot />
+        </main>
+    </body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
