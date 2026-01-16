@@ -30,12 +30,15 @@ import { links } from "~/config/navigation";
                     {link.sublinks && (
                         <ul class="ml-4">
                             {link.sublinks.map((sublink) => (
-                                <li class="p-4 border-l border-muted-foreground">
+                                <li
+                                    class="p-4 border-l border-muted-foreground hover:[&_span:first-child]:underline
+"
+                                >
                                     <a
                                         href={sublink.href}
-                                        class="flex items-center justify-between"
+                                        class="flex items-center justify-between "
                                     >
-                                        {sublink.label}
+                                        <span>{sublink.label}</span>
                                         {sublink.tag && (
                                             <span class="text-xs text-muted-foreground">
                                                 {sublink.tag}
