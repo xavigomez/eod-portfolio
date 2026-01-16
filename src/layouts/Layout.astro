@@ -15,18 +15,21 @@ import "~/styles/global.css";
         <div
             class="mx-auto max-w-432 lg:flex lg:flex-row lg:p-8 xl:p-16 2xl:p-24 lg:gap-16 xl:gap-24 2xl:gap-36"
         >
-            <header class="px-4 py-2 sm:px-8 sm:py-4 lg:p-0 bg-emerald-300">
-                <div class="flex justify-between items-center lg:hidden">
+            <div class="px-4 py-2 sm:px-8 sm:py-4 lg:p-0">
+                <!-- Mobile header bar -->
+                <header class="flex justify-between items-center lg:hidden">
                     <div>name</div>
                     <div>actions</div>
-                </div>
+                </header>
+
+                <!-- Desktop sidebar -->
                 <aside
-                    class="hidden lg:flex lg:w-60 lg:shrink-0 flex-col bg-amber-200 sticky lg:top-8 xl:top-16 2xl:top-24"
+                    class="hidden lg:flex lg:w-60 lg:shrink-0 flex-col sticky lg:top-8 xl:top-16 2xl:top-24"
                 >
                     <slot name="sidebar" />
                 </aside>
-            </header>
-            <main class="flex-1 h-379">
+            </div>
+            <main class="flex-1">
                 <slot />
             </main>
         </div>
