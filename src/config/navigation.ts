@@ -1,5 +1,5 @@
-import { Bot, LampDesk } from "@lucide/astro";
-import type { NavLink, SubLink } from "~/types/navigation";
+import { Bot, LampDesk, Linkedin, Mail, Phone } from "@lucide/astro";
+import type { NavLink, Social, SubLink } from "~/types/navigation";
 
 const workSublinks: SubLink[] = [
   {
@@ -49,4 +49,23 @@ const links: NavLink[] = [
   },
 ];
 
-export { links };
+// TODO: add real socials data
+const socials: Social[] = [
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/your-username/",
+    title: "LinkedIn",
+  },
+  {
+    icon: Mail,
+    href: "mailto:email@example.com",
+    title: "Mail",
+  },
+  {
+    icon: Phone,
+    href: "tel:+1234567890",
+    title: "Phone",
+  },
+];
+
+export { links, socials };

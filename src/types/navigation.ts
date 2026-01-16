@@ -9,3 +9,9 @@ export interface NavLink {
   href: string;
   sublinks?: SubLink[];
 }
+
+export interface Social {
+  icon: typeof LucideIconType;
+  href: string;
+  title: string;
+}
