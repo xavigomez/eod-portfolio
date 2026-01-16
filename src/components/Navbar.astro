@@ -1,5 +1,7 @@
 ---
 import { links } from "~/config/navigation";
+import { Button } from "~/components/ui/button";
+import { Download } from "@lucide/astro";
 ---
 
 <nav aria-label="Main navigation">
@@ -53,4 +55,11 @@ import { links } from "~/config/navigation";
             ))
         }
     </ul>
+    <Button className="w-full cursor-pointer">
+        <a
+            href="/files/cv.pdf"
+            download
+            class="flex items-center gap-2 font-bold"><Download />Download CV</a
+        >
+    </Button>
 </nav>
