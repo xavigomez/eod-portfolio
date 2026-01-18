@@ -1,0 +1,29 @@
+---
+import { Badge } from "~/components/ui/badge";
+
+const badgeContainerClasses = "pt-6 [&>span]:px-3 [&>span]:py-2 [&>span]:text-base [&>span]:bg-white [&>span]:border-foreground flex flex-wrap gap-2";
+
+const statusIndicatorClasses = "relative flex items-center justify-center size-3 mr-2";
+const pingCircleClasses = "absolute size-full bg-green-500 rounded-full animate-ping opacity-75";
+const pulseCircleClasses = "absolute size-full bg-green-400 rounded-full animate-pulse";
+const mainCircleClasses = "relative size-2.5 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-sm shadow-green-500/50 group-hover:shadow-md group-hover:shadow-green-500/70 transition-all duration-300";
+const innerDotClasses = "size-1 bg-white rounded-full animate-pulse";
+
+const badgeTextClasses = "font-medium";
+---
+
+<div class={badgeContainerClasses}>
+    <Badge variant="outline" className="relative group">
+        <span class={statusIndicatorClasses} aria-hidden="true">
+            <span class={pingCircleClasses}></span>
+            <span class={pulseCircleClasses}></span>
+            <span class={mainCircleClasses}>
+                <span class={innerDotClasses}></span>
+            </span>
+        </span>
+        <span class={badgeTextClasses}>Open to work</span>
+    </Badge>
+    <Badge variant="outline">+6 years</Badge>
+    <Badge variant="outline">User experience</Badge>
+    <Badge variant="outline">Remote</Badge>
+</div>
