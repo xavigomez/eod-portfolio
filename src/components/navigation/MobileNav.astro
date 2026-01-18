@@ -1,3 +1,29 @@
+---
+import Branding from "~/components/navigation/Branding.astro";
+import NavLinks from "~/components/navigation/NavLinks.astro";
+import SocialLinks from "~/components/navigation/SocialLinks.astro";
+import DownloadCV from "~/components/navigation/DownloadCV.astro";
+import { MobileMenuSheet } from "~/components/navigation/MobileMenuSheet";
+---
+
 <nav class="flex justify-between items-center" aria-label="Mobile navigation">
-    Table/Mobile navbar
+    <div>
+        <Branding />
+    </div>
+    <div class="flex items-center gap-4">
+        <DownloadCV class="hidden sm:flex bg-muted-foreground" />
+        <MobileMenuSheet client:load>
+            <nav aria-label="Mobile menu navigation">
+                <NavLinks />
+                <div class="border-t p-4 mt-4">
+                    <SocialLinks />
+                </div>
+                <div class="px-4">
+                    <DownloadCV
+                        class="w-full cursor-pointer bg-muted-foreground flex sm:hidden"
+                    />
+                </div>
+            </nav>
+        </MobileMenuSheet>
+    </div>
 </nav>
