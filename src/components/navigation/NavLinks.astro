@@ -1,0 +1,44 @@
+---
+import { links } from "~/config/navigation";
+---
+
+<ul class="p-2">
+    {
+        links.map((link) => (
+            <li>
+                <a
+                    href={link.href}
+                    class="font-semibold flex items-center p-2"
+                >
+                    {link.icon && (
+                        <link.icon
+                            stroke-width={2.5}
+                            class="w-4 h-4 mr-2"
+                        />
+                    )}
+                    {link.label}
+                </a>
+
+                {link.sublinks && (
+                    <ul class="ml-4">
+                        {link.sublinks.map((sublink) => (
+                            <li class="p-4 border-l hover:[&_span:first-child]:underline">
+                                <a
+                                    href={sublink.href}
+                                    class="flex items-center justify-between "
+                                >
+                                    <span>{sublink.label}</span>
+                                    {sublink.tag && (
+                                        <span class="text-xs text-muted-foreground">
+                                            {sublink.tag}
+                                        </span>
+                                    )}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </li>
+        ))
+    }
+</ul>

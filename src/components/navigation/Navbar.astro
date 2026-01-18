@@ -1,0 +1,20 @@
+---
+import Branding from "~/components/navigation/Branding.astro";
+import NavLinks from "~/components/navigation/NavLinks.astro";
+import SocialLinks from "~/components/navigation/SocialLinks.astro";
+import DownloadCV from "~/components/navigation/DownloadCV.astro";
+---
+
+<nav aria-label="Main navigation">
+    <div class="p-4 pt-0">
+        <Branding />
+    </div>
+
+    <NavLinks />
+
+    <DownloadCV />
+
+    <div class="mt-16 border-t p-4">
+        <SocialLinks />
+    </div>
+</nav>

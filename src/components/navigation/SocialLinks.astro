@@ -1,0 +1,17 @@
+---
+import { socials } from "~/config/navigation";
+---
+
+<nav class="flex gap-4">
+    {
+        socials.map((social) => (
+            <a
+                href={social.href}
+                title={social.title}
+                class="text-muted-foreground hover:text-foreground"
+            >
+                <social.icon class="w-5 h-5" />
+            </a>
+        ))
+    }
+</nav>
