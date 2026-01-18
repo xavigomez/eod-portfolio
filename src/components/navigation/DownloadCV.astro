@@ -1,14 +1,20 @@
 ---
 import { Button } from "~/components/ui/button";
 import { Download } from "@lucide/astro";
+
+interface Props {
+    class?: string;
+}
+
+const { class: className } = Astro.props;
 ---
 
-<Button className="w-full cursor-pointer">
+<Button className={className}>
     <a
         href="/files/cv.pdf"
         download
-        class="flex items-center gap-2 font-bold"
+        class="flex items-center gap-2 font-bold cursor-pointer"
     >
-        <Download />Download CV
+        <Download /><span>Download CV</span>
     </a>
 </Button>
