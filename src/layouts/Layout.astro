@@ -1,5 +1,7 @@
 ---
 import "~/styles/global.css";
+import DesktopNav from "~/components/navigation/DesktopNav.astro";
+import MobileNav from "~/components/navigation/MobileNav.astro";
 ---
 
 <!doctype html>
@@ -17,16 +19,15 @@ import "~/styles/global.css";
         >
             <div class="px-4 py-2 sm:px-8 sm:py-4 lg:p-0">
                 <!-- Mobile header bar -->
-                <header class="flex justify-between items-center lg:hidden">
-                    <div>name</div>
-                    <div>actions</div>
+                <header class="lg:hidden">
+                    <MobileNav />
                 </header>
 
                 <!-- Desktop sidebar -->
                 <aside
                     class="hidden lg:flex lg:w-60 lg:shrink-0 flex-col sticky top-8"
                 >
-                    <slot name="sidebar" />
+                    <DesktopNav />
                 </aside>
             </div>
             <main class="flex-1">
