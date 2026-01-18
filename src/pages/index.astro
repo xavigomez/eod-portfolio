@@ -1,29 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Badges from "../components/Badges.astro";
+import Badges from "../components/sections/Badges.astro";
 import Gallery from "../components/sections/Gallery.astro";
+import Introduction from "../components/sections/Introduction.astro";
 ---
 
 <Layout>
     <div class="px-4 py-2 sm:px-8 sm:py-4 lg:p-0">
-        <section>
-            <h1
-                class="text-7xl xl:text-[98px] font-bold tracking-[-0.04em] leading-[0.85]"
-            >
-                Elisabet Osuna
-            </h1>
-            <h2 class="text-6xl xl:text-8xl tracking-[-0.04em] leading-[1.2]">
-                Product Designer
-            </h2>
-            <p class="text-2xl xl:text-[28px] leading-[1.2] mt-2">
-                Hi! I have <strong>6+ years</strong> of experience designing great
-                <strong>user</strong> experiences and impactful products that help
-                <strong>businesses grow</strong>, working closely with
-                <strong>cross-functional teams</strong>.
-            </p>
-             <!-- Badges -->
-             <Badges />
-        </section>
+        <Introduction />
+        <Badges />
         <Gallery class="mt-24" />
     </div>
 </Layout>
