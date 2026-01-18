@@ -37,13 +37,13 @@ const aboutSublinks: SubLink[] = [
 const links: NavLink[] = [
   {
     label: "Work",
-    href: "/work",
+    href: "/my-work",
     icon: LampDesk,
     sublinks: workSublinks,
   },
   {
     label: "About",
-    href: "/about",
+    href: "/about-me",
     icon: Bot,
     sublinks: aboutSublinks,
   },
