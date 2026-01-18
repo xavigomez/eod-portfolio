@@ -13,6 +13,7 @@ import { MobileMenuSheet } from "~/components/navigation/MobileMenuSheet";
     <div class="flex items-center gap-4">
         <DownloadCV class="hidden sm:flex bg-muted-foreground" />
         <MobileMenuSheet client:load>
+            <!-- FIXME: the close button is over a link and its hard to hit -->
             <nav aria-label="Mobile menu navigation">
                 <NavLinks />
                 <div class="border-t p-4 mt-4">
