@@ -1,10 +1,11 @@
 import { type Icon as LucideIconType } from "@lucide/astro";
-export interface SubLink extends Omit<NavLink, "icon" | "sublinks"> {
+
+export interface SubLink extends Omit<NavLink, "type" | "sublinks"> {
   tag?: string;
 }
 
 export interface NavLink {
-  icon?: typeof LucideIconType;
+  type?: "work" | "about";
   label: string;
   href: string;
   sublinks?: SubLink[];

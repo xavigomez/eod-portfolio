@@ -6,15 +6,56 @@ import { links } from "~/config/navigation";
     {
         links.map((link) => (
             <li>
-                <a
-                    href={link.href}
-                    class="font-semibold flex items-center p-2"
-                >
-                    {link.icon && (
-                        <link.icon
-                            stroke-width={2.5}
-                            class="w-4 h-4 mr-2"
-                        />
+                <a href={link.href} class="font-semibold flex items-center p-2">
+                    {link.type === "work" && (
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="mr-2 icon-lamp"
+                        >
+                            <g class="lamp-head">
+                                <!-- lamp shade fill (behind the stroke) -->
+                                <path
+                                    d="M14.207 4.793l5.994 1.227a1 1 0 0 1 .506 1.687l-7 7a1 1 0 0 1-1.687-.506l-1.227-5.994z"
+                                    stroke="none"
+                                    class="lamp-bulb"
+                                />
+                                <!-- full lamp head stroke -->
+                                <path d="M10.293 2.293a1 1 0 0 1 1.414 0l2.5 2.5 5.994 1.227a1 1 0 0 1 .506 1.687l-7 7a1 1 0 0 1-1.687-.506l-1.227-5.994-2.5-2.5a1 1 0 0 1 0-1.414z" />
+                                <!-- inner line -->
+                                <path d="m14.207 4.793-3.414 3.414" />
+                            </g>
+                            <path d="M3 20a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                            <path d="m9.086 6.5-4.793 4.793a1 1 0 0 0-.18 1.17L7 18" />
+                        </svg>
+                    )}
+                    {link.type === "about" && (
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="mr-2 icon-robot"
+                        >
+                            <path d="M12 8V4H8" />
+                            <rect width="16" height="12" x="4" y="8" rx="2" />
+                            <path d="M2 14h2" />
+                            <path d="M20 14h2" />
+                            <path class="robot-eye" d="M15 13v2" />
+                            <path class="robot-eye" d="M9 13v2" />
+                        </svg>
                     )}
                     {link.label}
                 </a>
@@ -42,3 +83,57 @@ import { links } from "~/config/navigation";
         ))
     }
 </ul>
+
+<style>
+    .robot-eye {
+        animation: blink 4s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+        0%,
+        85%,
+        88%,
+        91%,
+        100% {
+            opacity: 1;
+        }
+        86%,
+        90% {
+            opacity: 0;
+        }
+    }
+
+    .lamp-head {
+        animation: lamp-look 33s ease-in-out infinite;
+        transform-origin: 9px 6.5px;
+    }
+
+    @keyframes lamp-look {
+        0%,
+        5% {
+            transform: rotate(0deg);
+        }
+        9%,
+        91% {
+            transform: rotate(-15deg);
+        }
+        95%,
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    .lamp-bulb {
+        animation: lamp-bulb-glow 33s ease-in-out infinite;
+    }
+
+    @keyframes lamp-bulb-glow {
+        0%, 8%, 92%, 100% {
+            fill: none;
+        }
+        9%, 91% {
+            fill: oklch(85.2% 0.199 91.936);
+            opacity: 0.5;
+        }
+    }
+</style>

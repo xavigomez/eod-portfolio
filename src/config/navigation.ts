@@ -1,4 +1,4 @@
-import { Bot, LampDesk, Linkedin, Mail, Phone } from "@lucide/astro";
+import { Linkedin, Mail, Phone } from "@lucide/astro";
 import type { NavLink, Social, SubLink } from "~/types/navigation";
 
 const workSublinks: SubLink[] = [
@@ -38,13 +38,13 @@ const links: NavLink[] = [
   {
     label: "Work",
     href: "/my-work",
-    icon: LampDesk,
+    type: "work",
     sublinks: workSublinks,
   },
   {
     label: "About",
     href: "/about-me",
-    icon: Bot,
+    type: "about",
     sublinks: aboutSublinks,
   },
 ];
