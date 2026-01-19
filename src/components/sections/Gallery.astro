@@ -1,29 +1,135 @@
 ---
 interface Props {
     class?: string;
+    rows: Array<[{ src: string; alt: string }, { src: string; alt: string }]>;
 }
 
-const { class: className } = Astro.props;
+const { class: className, rows } = Astro.props;
+
+const widthCombinations = [
+    ["w-1/6", "w-5/6"],
+    ["w-5/6", "w-1/6"],
+    ["w-2/6", "w-4/6"],
+    ["w-4/6", "w-2/6"],
+    ["w-2/5", "w-3/5"],
+    ["w-3/5", "w-2/5"],
+];
+
+const getRandomIndex = (lastIndex: number | null): number => {
+    let index: number;
+    do {
+        index = Math.floor(Math.random() * widthCombinations.length);
+    } while (index === lastIndex);
+    return index;
+};
+
+let lastIndex: number | null = null;
+const rowWidths = rows.map(() => {
+    const index = getRandomIndex(lastIndex);
+    lastIndex = index;
+    return widthCombinations[index];
+});
 ---
 
-<!-- FIXME: add proper images -->
-<section
-    id="gallery"
-    class:list={[
-        "space-y-4 [&>div]:flex [&>div]:flex-row [&>div]:gap-4 [&>div]:h-14 [&>div]:sm:h-24 [&>div]:md:h-32 [&_img]:md:rounded-4xl [&_img]:rounded-xl",
-        className,
-    ]}
->
-    <div>
-        <img class="w-2/6" src="https://picsum.photos/300/300?1" alt="" />
-        <img class="w-4/6" src="https://picsum.photos/600/300?2" alt="" />
-    </div>
-    <div>
-        <img class="w-3/5" src="https://picsum.photos/300/300?3" alt="" />
-        <img class="w-2/5" src="https://picsum.photos/600/300?4" alt="" />
-    </div>
-    <div>
-        <img class="w-5/6" src="https://picsum.photos/300/300?5" alt="" />
-        <img class="w-1/6" src="https://picsum.photos/600/300?6" alt="" />
-    </div>
+<section id="gallery" class:list={["gallery", className]}>
+    {
+        rows.map((row, i) => {
+            const [w1, w2] = rowWidths[i];
+            return (
+                <div class="gallery-row">
+                    <div class:list={["gallery-item", w1]}>
+                        <img src={row[0].src} alt={row[0].alt} />
+                    </div>
+                    <div class:list={["gallery-item", w2]}>
+                        <img src={row[1].src} alt={row[1].alt} />
+                    </div>
+                </div>
+            );
+        })
+    }
 </section>
+
+<script>
+    document.querySelectorAll(".gallery-item").forEach((item) => {
+        const el = item as HTMLElement;
+        const img = el.querySelector("img");
+        if (!img) return;
+
+        el.addEventListener("mousemove", (e) => {
+            const rect = el.getBoundingClientRect();
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const x = e.clientX - rect.left - centerX;
+            const y = e.clientY - rect.top - centerY;
+
+            const rotateX = (y / centerY) * -8;
+            const rotateY = (x / centerX) * 8;
+
+            img.style.transform = `scale(1.1) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        el.addEventListener("mouseleave", () => {
+            img.style.transform = "";
+        });
+    });
+</script>
+
+<style>
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .gallery-row {
+        display: flex;
+        gap: 1rem;
+        height: 3.5rem;
+    }
+
+    @media (min-width: 640px) {
+        .gallery-row {
+            height: 6rem;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .gallery-row {
+            height: 8rem;
+        }
+    }
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.75rem;
+        /*cursor: pointer;*/
+        perspective: 1000px;
+    }
+
+    @media (min-width: 768px) {
+        .gallery-item {
+            border-radius: 2rem;
+        }
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease-out;
+    }
+
+    .gallery-item::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.15);
+        transition: opacity 0.3s ease-out;
+        pointer-events: none;
+    }
+
+    .gallery-item:hover::after {
+        opacity: 0;
+    }
+</style>
