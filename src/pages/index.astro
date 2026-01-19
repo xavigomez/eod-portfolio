@@ -1,30 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Badges from "../components/sections/Badges.astro";
-import Gallery from "../components/sections/Gallery.astro";
-import Introduction from "../components/sections/Introduction.astro";
+import Layout from "~/layouts/Layout.astro";
+import Badges from "~/components/sections/Badges.astro";
+import Gallery from "~/components/sections/Gallery.astro";
+import Introduction from "~/components/sections/Introduction.astro";
+import { gallery } from "~/data/home";
 ---
 
 <Layout>
     <div class="px-4 py-2 sm:px-8 sm:py-4 lg:p-0">
         <Introduction />
         <Badges class="mt-6" />
-        <Gallery
-            class="mt-24"
-            rows={[
-                [
-                    { src: "https://picsum.photos/300/300?1", alt: "" },
-                    { src: "https://picsum.photos/600/300?2", alt: "" },
-                ],
-                [
-                    { src: "https://picsum.photos/300/300?3", alt: "" },
-                    { src: "https://picsum.photos/600/300?4", alt: "" },
-                ],
-                [
-                    { src: "https://picsum.photos/300/300?5", alt: "" },
-                    { src: "https://picsum.photos/600/300?6", alt: "" },
-                ],
-            ]}
-        />
+        <Gallery class="mt-24" rows={gallery} />
     </div>
 </Layout>

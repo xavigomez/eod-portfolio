@@ -1,51 +1,34 @@
 ---
+export type Width = "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "2/5" | "3/5";
+
+export interface GalleryImage {
+    src: string;
+    alt: string;
+    width: Width;
+}
+
+export type GalleryRow = [GalleryImage, GalleryImage];
+
 interface Props {
     class?: string;
-    rows: Array<[{ src: string; alt: string }, { src: string; alt: string }]>;
+    rows: GalleryRow[];
 }
 
 const { class: className, rows } = Astro.props;
-
-const widthCombinations = [
-    ["w-1/6", "w-5/6"],
-    ["w-5/6", "w-1/6"],
-    ["w-2/6", "w-4/6"],
-    ["w-4/6", "w-2/6"],
-    ["w-2/5", "w-3/5"],
-    ["w-3/5", "w-2/5"],
-];
-
-const getRandomIndex = (lastIndex: number | null): number => {
-    let index: number;
-    do {
-        index = Math.floor(Math.random() * widthCombinations.length);
-    } while (index === lastIndex);
-    return index;
-};
-
-let lastIndex: number | null = null;
-const rowWidths = rows.map(() => {
-    const index = getRandomIndex(lastIndex);
-    lastIndex = index;
-    return widthCombinations[index];
-});
 ---
 
 <section id="gallery" class:list={["gallery", className]}>
     {
-        rows.map((row, i) => {
-            const [w1, w2] = rowWidths[i];
-            return (
-                <div class="gallery-row">
-                    <div class:list={["gallery-item", w1]}>
-                        <img src={row[0].src} alt={row[0].alt} />
-                    </div>
-                    <div class:list={["gallery-item", w2]}>
-                        <img src={row[1].src} alt={row[1].alt} />
-                    </div>
+        rows.map((row) => (
+            <div class="gallery-row">
+                <div class:list={["gallery-item", `w-${row[0].width}`]}>
+                    <img src={row[0].src} alt={row[0].alt} />
                 </div>
-            );
-        })
+                <div class:list={["gallery-item", `w-${row[1].width}`]}>
+                    <img src={row[1].src} alt={row[1].alt} />
+                </div>
+            </div>
+        ))
     }
 </section>
 
