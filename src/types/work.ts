@@ -10,7 +10,7 @@ export interface Project {
   image: string;
   imageAlt: string;
   href: string;
-  tag: Tag[];
+  tags: Tag[];
 }
 
 export interface WorkShowcase {

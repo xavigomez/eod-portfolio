@@ -55,7 +55,7 @@ export const work: WorkShowcase[] = [
         image: "https://picsum.photos/800/400?20",
         imageAlt: "Content Auto-Optimization project screenshot",
         href: "/",
-        tag: [
+        tags: [
           {
             text: "partner adoption",
             highlight: "+90%",
@@ -82,7 +82,7 @@ export const work: WorkShowcase[] = [
         image: "https://picsum.photos/800/400?20",
         imageAlt: "Content Auto-Optimization project screenshot",
         href: "/",
-        tag: [
+        tags: [
           {
             text: "Recurrence",
             highlight: "+30%",
@@ -100,7 +100,7 @@ export const work: WorkShowcase[] = [
         image: "https://picsum.photos/800/400?20",
         imageAlt: "Content Auto-Optimization project screenshot",
         href: "/",
-        tag: [
+        tags: [
           {
             text: "delivery speed up",
             icon: "chevron-up",
@@ -127,7 +127,7 @@ export const work: WorkShowcase[] = [
         image: "https://picsum.photos/800/400?20",
         imageAlt: "Content Auto-Optimization project screenshot",
         href: "/",
-        tag: [
+        tags: [
           {
             text: "utilization",
             highlight: "200%",
