@@ -2,6 +2,7 @@
 import { Button } from "~/components/ui/button";
 import { Badge } from "~/components/ui/badge";
 import type { WorkShowcase } from "~/types/work";
+import { ChevronDown, ChevronUp } from "@lucide/astro";
 
 interface Props extends WorkShowcase {
     class?: string;
@@ -15,6 +16,20 @@ const {
     tags,
     projects,
 } = Astro.props;
+
+const positive = [1, 2, 3, 6];
+const negative = [-6, -3, -2, -1];
+const all = [...negative, ...positive];
+
+const getRotation = (prev?: number) => {
+    if (prev === undefined) {
+        return all[Math.floor(Math.random() * all.length)];
+    }
+    const pool = (prev > 0 ? negative : positive).filter(
+        (n) => Math.abs(n) !== Math.abs(prev),
+    );
+    return pool[Math.floor(Math.random() * pool.length)];
+};
 ---
 
 <div class:list={["space-y-4", className]}>
@@ -53,8 +68,40 @@ const {
                         <h4 class="text-2xl font-semibold">{project.title}</h4>
                         <p class="text-sm">{project.description}</p>
                     </div>
-                    <div>
+
+                    <div class="flex gap-2 justify-between items-end ">
                         <Button size="lg">View Project</Button>
+                        <div class="flex-1 flex flex-col gap-4 items-center">
+                            {(() => {
+                                let prev: number | undefined;
+                                return project.tags.map((tag) => {
+                                    const rotation = getRotation(prev);
+                                    prev = rotation;
+                                    return (
+                                        <Badge
+                                            variant={"outline"}
+                                            className="border-foreground bg-white md:px-3 md:py-1 md:text-base"
+                                            style={{
+                                                transform: `rotate(${rotation}deg)`,
+                                            }}
+                                        >
+                                            {"highlight" in tag && (
+                                                <strong>{tag.highlight}</strong>
+                                            )}
+                                            {"icon" in tag &&
+                                                tag.icon === "chevron-up" && (
+                                                    <ChevronUp class="size-5! stroke-3 stroke-foreground" />
+                                                )}
+                                            {"icon" in tag &&
+                                                tag.icon === "chevron-down" && (
+                                                    <ChevronDown class="size-5! stroke-3 stroke-foreground" />
+                                                )}
+                                            <span>{tag.text}</span>
+                                        </Badge>
+                                    );
+                                });
+                            })()}
+                        </div>
                     </div>
                 </div>
             </a>
