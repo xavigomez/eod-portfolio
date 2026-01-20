@@ -7,8 +7,18 @@ import { MobileMenuSheet } from "~/components/navigation/MobileMenuSheet";
 ---
 
 <nav class="flex justify-between items-center" aria-label="Mobile navigation">
-    <div>
-        <Branding />
+    <div class="flex items-center gap-4">
+        <img
+            src="https://placeholdit.com/100x100/dddddd/999999"
+            alt="Logo"
+            class="w-10 h-10"
+        />
+        <div
+            id="mobile-branding"
+            class="opacity-0 transition-opacity duration-300"
+        >
+            <Branding />
+        </div>
     </div>
     <div class="flex items-center gap-4">
         <DownloadCV class="hidden sm:flex bg-muted-foreground" />
@@ -28,3 +38,38 @@ import { MobileMenuSheet } from "~/components/navigation/MobileMenuSheet";
         </MobileMenuSheet>
     </div>
 </nav>
+
+<script>
+    const header = document.querySelector("header");
+    const introName = document.querySelector("#intro-name");
+    const mobileBranding = document.querySelector("#mobile-branding");
+
+    if (header && mobileBranding) {
+        // If not on home page (no intro-name), show branding immediately
+        if (!introName) {
+            mobileBranding.classList.remove("opacity-0");
+            mobileBranding.classList.add("opacity-100");
+        }
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 0) {
+                header.classList.add("border-b", "border-border");
+            } else {
+                header.classList.remove("border-b", "border-border");
+            }
+
+            // Only do the branding scroll effect on home page
+            if (introName) {
+                const introBottom = introName.getBoundingClientRect().bottom;
+
+                if (introBottom <= header.offsetHeight) {
+                    mobileBranding.classList.remove("opacity-0");
+                    mobileBranding.classList.add("opacity-100");
+                } else {
+                    mobileBranding.classList.remove("opacity-100");
+                    mobileBranding.classList.add("opacity-0");
+                }
+            }
+        });
+    }
+</script>
