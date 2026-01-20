@@ -1,0 +1,118 @@
+---
+import { Button } from "~/components/ui/button";
+import { Badge } from "~/components/ui/badge";
+import type { WorkShowcase } from "~/types/work";
+
+interface Props extends WorkShowcase {
+    class?: string;
+}
+
+const {
+    class: className,
+    company,
+    period,
+    description,
+    tags,
+    projects,
+} = Astro.props;
+---
+
+<div class:list={["space-y-4", className]}>
+    <span class="text-muted-foreground">{period}</span>
+    <div class="flex flex-col sm:flex-row gap-4">
+        <div class="sm:w-1/2">
+            <h3 class="text-4xl lg:text-5xl font-bold">{company}</h3>
+            <div>
+                {
+                    tags.map((tag) => (
+                        <Badge
+                            variant="outline"
+                            className="border-foreground bg-white"
+                        >
+                            {tag}
+                        </Badge>
+                    ))
+                }
+            </div>
+        </div>
+        <div class="sm:w-1/2 pl-4 border-l-muted-foreground border-l">
+            <p set:html={description} />
+        </div>
+    </div>
+    {
+        projects.map((project) => (
+            <a
+                href={project.href}
+                class="project-card rounded-4xl bg-white border p-4 border-foreground flex flex-col sm:flex-row gap-4 cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1"
+            >
+                <div class="project-image sm:w-1/2 h-52">
+                    <img src={project.image} alt={project.imageAlt} />
+                </div>
+                <div class="sm:w-1/2 flex flex-col gap-4 justify-between">
+                    <div class="space-y-2">
+                        <h4 class="text-2xl font-semibold">{project.title}</h4>
+                        <p class="text-sm">{project.description}</p>
+                    </div>
+                    <div>
+                        <Button size="lg">View Project</Button>
+                    </div>
+                </div>
+            </a>
+        ))
+    }
+</div>
+
+<style>
+    .project-image {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1.5rem;
+        perspective: 1000px;
+    }
+
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease-out;
+    }
+
+    .project-image::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.15);
+        transition: opacity 0.3s ease-out;
+        pointer-events: none;
+        border-radius: inherit;
+    }
+
+    .project-image:hover::after {
+        opacity: 0;
+    }
+</style>
+
+<script>
+    document.querySelectorAll(".project-image").forEach((item) => {
+        const el = item as HTMLElement;
+        const img = el.querySelector("img");
+        if (!img) return;
+
+        el.addEventListener("mousemove", (e) => {
+            const rect = el.getBoundingClientRect();
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const x = e.clientX - rect.left - centerX;
+            const y = e.clientY - rect.top - centerY;
+
+            const rotateX = (y / centerY) * -8;
+            const rotateY = (x / centerX) * 8;
+
+            img.style.transform = `scale(1.1) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        el.addEventListener("mouseleave", () => {
+            img.style.transform = "";
+        });
+    });
+</script>
