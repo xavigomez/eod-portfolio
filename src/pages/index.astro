@@ -3,10 +3,8 @@ import Layout from "~/layouts/Layout.astro";
 import Badges from "~/components/sections/Badges.astro";
 import Gallery from "~/components/sections/Gallery.astro";
 import Introduction from "~/components/sections/Introduction.astro";
-import WorkShowcase from "~/components/sections/WorkShowcase.astro";
-import { gallery, work } from "~/data/home";
-import { Button } from "~/components/ui/button";
-import { Badge } from "~/components/ui/badge";
+import Work from "~/components/sections/Work.astro";
+import { gallery } from "~/data/home";
 ---
 
 <Layout>
@@ -14,20 +12,7 @@ import { Badge } from "~/components/ui/badge";
         <Introduction />
         <Badges class="mt-6" />
         <Gallery class="mt-24" rows={gallery} />
-        <section id="work" class="space-y-12 mt-24">
-            <div
-                class="flex items-end [&>hr]:border-t-2 [&>hr]:border-foreground [&>hr]:mb-2"
-            >
-                <hr class="w-14 mr-2" />
-                <hr class="flex-1" />
-                <h2 class="text-5xl sm:text-7xl font-bold">Work</h2>
-            </div>
-
-            <!-- Using the new WorkShowcase component -->
-            <div class="space-y-8">
-                {work.map((item) => <WorkShowcase {...item} />)}
-            </div>
-        </section>
+        <Work class="mt-24" />
     </div>
 </Layout>
 
