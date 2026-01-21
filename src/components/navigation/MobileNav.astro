@@ -7,7 +7,7 @@ import { MobileMenuSheet } from "~/components/navigation/MobileMenuSheet";
 ---
 
 <nav class="flex justify-between items-center" aria-label="Mobile navigation">
-    <div id="mobile-branding" class="opacity-0 transition-opacity duration-300">
+    <div id="mobile-branding">
         <Branding variant="mobile" />
     </div>
     <div class="flex items-center gap-4">
@@ -32,13 +32,16 @@ import { MobileMenuSheet } from "~/components/navigation/MobileMenuSheet";
 <script>
     const header = document.querySelector("header");
     const introName = document.querySelector("#intro-name");
-    const mobileBranding = document.querySelector("#mobile-branding");
+    const brandingText = document.querySelector(
+        "#mobile-branding #branding-text",
+    );
 
-    if (header && mobileBranding) {
-        // If not on home page (no intro-name), show branding immediately
-        if (!introName) {
-            mobileBranding.classList.remove("opacity-0");
-            mobileBranding.classList.add("opacity-100");
+    if (header) {
+        // If not on home page (no intro-name), show branding text immediately
+        if (!introName && brandingText) {
+            brandingText.classList.add("opacity-100");
+        } else if (brandingText) {
+            brandingText.classList.add("opacity-0");
         }
 
         window.addEventListener("scroll", () => {
@@ -48,16 +51,16 @@ import { MobileMenuSheet } from "~/components/navigation/MobileMenuSheet";
                 header.classList.remove("border-b", "border-border");
             }
 
-            // Only do the branding scroll effect on home page
-            if (introName) {
+            // Only do the branding text scroll effect on home page
+            if (introName && brandingText) {
                 const introBottom = introName.getBoundingClientRect().bottom;
 
                 if (introBottom <= header.offsetHeight) {
-                    mobileBranding.classList.remove("opacity-0");
-                    mobileBranding.classList.add("opacity-100");
+                    brandingText.classList.remove("opacity-0");
+                    brandingText.classList.add("opacity-100");
                 } else {
-                    mobileBranding.classList.remove("opacity-100");
-                    mobileBranding.classList.add("opacity-0");
+                    brandingText.classList.remove("opacity-100");
+                    brandingText.classList.add("opacity-0");
                 }
             }
         });
