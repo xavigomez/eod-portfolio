@@ -4,17 +4,17 @@ import type { NavLink, Social, SubLink } from "~/types/navigation";
 const workSublinks: SubLink[] = [
   {
     label: "marketgoo",
-    href: "foo",
+    href: "/#marketgoo",
     tag: "now",
   },
   {
     label: "Eventscase",
-    href: "foo",
+    href: "/#eventscase",
     tag: "2021",
   },
   {
     label: "Declarando",
-    href: "foo",
+    href: "/#declarando",
     tag: "2019",
   },
 ];
@@ -37,13 +37,13 @@ const aboutSublinks: SubLink[] = [
 const links: NavLink[] = [
   {
     label: "Work",
-    href: "/my-work",
+    href: "#work",
     type: "work",
     sublinks: workSublinks,
   },
   {
     label: "About",
-    href: "/about-me",
+    href: "/#about",
     type: "about",
     sublinks: aboutSublinks,
   },

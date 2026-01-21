@@ -39,6 +39,7 @@ export const gallery: GalleryRow[] = [
 
 export const work: WorkShowcase[] = [
   {
+    id: "marketgoo",
     company: "marketgoo",
     period: "2023 - Current",
     description:
@@ -85,6 +86,7 @@ export const work: WorkShowcase[] = [
     ],
   },
   {
+    id: "eventscase",
     company: "eventscase",
     period: "2021 - 2023",
     description:
@@ -130,6 +132,7 @@ export const work: WorkShowcase[] = [
     ],
   },
   {
+    id: "declarando",
     company: "Declarando",
     period: "2019 - 2021",
     description:

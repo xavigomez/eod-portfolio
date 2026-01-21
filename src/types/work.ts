@@ -14,6 +14,7 @@ export interface Project {
 }
 
 export interface WorkShowcase {
+  id: string;
   company: string;
   period: string;
   description: string;
