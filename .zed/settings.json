@@ -1,4 +1,6 @@
 {
+  "format_on_save": "on",
+  "formatter": "prettier",
   "languages": {
     "CSS": {
       "language_servers": ["tailwindcss-language-server"],
