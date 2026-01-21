@@ -1,4 +1,43 @@
-<Fragment>
-    <p class="text-lg sm:text-xl font-bold">Elisabet Osuna</p>
-    <p class="text-sm sm:text-base text-muted-foreground">Product Designer</p>
-</Fragment>
+---
+interface Props {
+    variant?: "desktop" | "mobile";
+}
+
+const { variant = "desktop" } = Astro.props;
+const isDesktop = variant === "desktop";
+---
+
+<a
+    href="/"
+    class="flex items-center gap-3 cursor-pointer"
+    data-branding-link
+    data-variant={variant}
+>
+    {
+        !isDesktop && (
+            <img
+                src="https://placeholdit.com/100x100/dddddd/999999"
+                alt="Logo"
+                class="w-10 h-10"
+            />
+        )
+    }
+    <div>
+        <p class="text-lg sm:text-xl font-bold">Elisabet Osuna</p>
+        <p class="text-sm sm:text-base text-muted-foreground">
+            Product Designer
+        </p>
+    </div>
+</a>
+
+<script>
+    document.querySelectorAll("[data-branding-link]").forEach((link) => {
+        link.addEventListener("click", (e) => {
+            const isHomePage = window.location.pathname === "/";
+            if (isHomePage) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+        });
+    });
+</script>

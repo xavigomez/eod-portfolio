@@ -7,18 +7,8 @@ import { MobileMenuSheet } from "~/components/navigation/MobileMenuSheet";
 ---
 
 <nav class="flex justify-between items-center" aria-label="Mobile navigation">
-    <div class="flex items-center gap-4">
-        <img
-            src="https://placeholdit.com/100x100/dddddd/999999"
-            alt="Logo"
-            class="w-10 h-10"
-        />
-        <div
-            id="mobile-branding"
-            class="opacity-0 transition-opacity duration-300"
-        >
-            <Branding />
-        </div>
+    <div id="mobile-branding" class="opacity-0 transition-opacity duration-300">
+        <Branding variant="mobile" />
     </div>
     <div class="flex items-center gap-4">
         <DownloadCV class="hidden sm:flex bg-muted-foreground" />
