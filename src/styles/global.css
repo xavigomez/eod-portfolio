@@ -6,6 +6,11 @@
 @layer base {
     html {
         scroll-behavior: smooth;
+        scroll-padding-top: 4rem;
+
+        @media (min-width: 1024px) {
+            scroll-padding-top: 2rem;
+        }
     }
     * {
         @apply border-border outline-ring/50;
