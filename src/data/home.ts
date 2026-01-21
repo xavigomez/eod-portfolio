@@ -1,41 +1,38 @@
-import type { GalleryRow } from "~/components/sections/Gallery.astro";
+import type { GalleryRow } from "~/types/gallery";
 import type { WorkShowcase } from "~/types/work";
 
 export const gallery: GalleryRow[] = [
   [
     {
-      src: "https://picsum.photos/300/300?1",
-      alt: "Mountain landscape at sunrise",
-      width: "1/6",
+      src: "/images/home/gallery/home-gallery-1-1.png",
+      alt: "Sheep on a green field",
+      width: "1/5",
     },
     {
-      src: "https://picsum.photos/600/300?2",
-      alt: "Urban architecture details",
-      width: "5/6",
+      src: "/images/home/gallery/home-gallery-1-2.png",
+      alt: "Tokyo skyline at dusk with mount Fuji in the background",
     },
   ],
   [
     {
-      src: "https://picsum.photos/600/300?3",
-      alt: "Abstract color patterns",
+      src: "/images/home/gallery/home-gallery-2-1.png",
+      alt: "Tree trunk showing different shades of green and brown",
       width: "4/6",
     },
     {
-      src: "https://picsum.photos/300/300?4",
-      alt: "Minimalist interior design",
-      width: "2/6",
+      src: "/images/home/gallery/home-gallery-2-2.png",
+      alt: "Typical japanese meal consisting in udon, soup and friend shrimp",
     },
   ],
   [
     {
-      src: "https://picsum.photos/300/300?5",
-      alt: "Nature close-up photography",
-      width: "2/5",
+      src: "/images/home/gallery/home-gallery-3-1.png",
+      alt: "Three linoleum prints depicting a llama, an sloth and a capibara with funny affirming messages",
+      width: "5/6",
     },
     {
-      src: "https://picsum.photos/600/300?6",
-      alt: "Coastal scenery at dusk",
-      width: "3/5",
+      src: "/images/home/gallery/home-gallery-3-2.png",
+      alt: "A frog based on a classic japanese woodblock printing design",
     },
   ],
 ];
@@ -52,8 +49,9 @@ export const work: WorkShowcase[] = [
         title: "Content Auto-Optimization",
         description:
           "AI-powered, automated content optimization for non-technical users.",
-        image: "https://picsum.photos/800/400?20",
-        imageAlt: "Content Auto-Optimization project screenshot",
+        image: "/public/images/home/showcase/home-showcase-marketgoo-0.png",
+        imageAlt:
+          "Screenshot of the Content Auto-Optimization feature interface",
         href: "/",
         tags: [
           {
@@ -63,6 +61,24 @@ export const work: WorkShowcase[] = [
           {
             text: "SEO score",
             highlight: "+15% ",
+          },
+        ],
+      },
+      {
+        title: "Smarter onboarding",
+        description:
+          "Reducing friction and helping users reach first value faster.",
+        image: "/public/images/home/showcase/home-showcase-marketgoo-1.png",
+        imageAlt: "Screenshot of the Smarter Onboarding flow interface",
+        href: "/",
+        tags: [
+          {
+            text: "activation rate",
+            highlight: "+10%",
+          },
+          {
+            text: "time to value",
+            highlight: "Faster",
           },
         ],
       },
@@ -79,8 +95,8 @@ export const work: WorkShowcase[] = [
         title: "Digital Venue",
         description:
           "A new tool designed to easily host remote and hybrid events.",
-        image: "https://picsum.photos/800/400?20",
-        imageAlt: "Content Auto-Optimization project screenshot",
+        image: "/public/images/home/showcase/home-showcase-eventscase-0.png",
+        imageAlt: "Screenshot of the Digital Venue virtual event platform",
         href: "/",
         tags: [
           {
@@ -97,8 +113,8 @@ export const work: WorkShowcase[] = [
         title: "Design System",
         description:
           "Multi-brand new design system adapted to the new branding.",
-        image: "https://picsum.photos/800/400?20",
-        imageAlt: "Content Auto-Optimization project screenshot",
+        image: "/public/images/home/showcase/home-showcase-eventscase-1.png",
+        imageAlt: "Screenshot of the Eventscase Design System components",
         href: "/",
         tags: [
           {
@@ -124,8 +140,8 @@ export const work: WorkShowcase[] = [
         title: "Renta Revamp",
         description:
           "Simplify and automate the renta process to help users save time and money.",
-        image: "https://picsum.photos/800/400?20",
-        imageAlt: "Content Auto-Optimization project screenshot",
+        image: "/public/images/home/showcase/home-showcase-declarando.png",
+        imageAlt: "Screenshot of the Declarando Renta Revamp interface",
         href: "/",
         tags: [
           {
