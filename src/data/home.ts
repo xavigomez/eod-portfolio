@@ -49,7 +49,7 @@ export const work: WorkShowcase[] = [
         title: "Content Auto-Optimization",
         description:
           "AI-powered, automated content optimization for non-technical users.",
-        image: "/public/images/home/showcase/home-showcase-marketgoo-0.png",
+        image: "/images/home/showcase/home-showcase-marketgoo-0.png",
         imageAlt:
           "Screenshot of the Content Auto-Optimization feature interface",
         href: "/",
@@ -68,7 +68,7 @@ export const work: WorkShowcase[] = [
         title: "Smarter onboarding",
         description:
           "Reducing friction and helping users reach first value faster.",
-        image: "/public/images/home/showcase/home-showcase-marketgoo-1.png",
+        image: "/images/home/showcase/home-showcase-marketgoo-1.png",
         imageAlt: "Screenshot of the Smarter Onboarding flow interface",
         href: "/",
         tags: [
@@ -95,7 +95,7 @@ export const work: WorkShowcase[] = [
         title: "Digital Venue",
         description:
           "A new tool designed to easily host remote and hybrid events.",
-        image: "/public/images/home/showcase/home-showcase-eventscase-0.png",
+        image: "/images/home/showcase/home-showcase-eventscase-0.png",
         imageAlt: "Screenshot of the Digital Venue virtual event platform",
         href: "/",
         tags: [
@@ -113,7 +113,7 @@ export const work: WorkShowcase[] = [
         title: "Design System",
         description:
           "Multi-brand new design system adapted to the new branding.",
-        image: "/public/images/home/showcase/home-showcase-eventscase-1.png",
+        image: "/images/home/showcase/home-showcase-eventscase-1.png",
         imageAlt: "Screenshot of the Eventscase Design System components",
         href: "/",
         tags: [
@@ -140,7 +140,7 @@ export const work: WorkShowcase[] = [
         title: "Renta Revamp",
         description:
           "Simplify and automate the renta process to help users save time and money.",
-        image: "/public/images/home/showcase/home-showcase-declarando.png",
+        image: "/images/home/showcase/home-showcase-declarando.png",
         imageAlt: "Screenshot of the Declarando Renta Revamp interface",
         href: "/",
         tags: [
