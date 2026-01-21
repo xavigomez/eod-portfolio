@@ -17,6 +17,7 @@ const widthClasses: Record<Width, string> = {
     "1/5": "w-1/5",
     "2/5": "w-2/5",
     "3/5": "w-3/5",
+    "4/5": "w-4/5",
 };
 ---
 
@@ -27,7 +28,7 @@ const widthClasses: Record<Width, string> = {
                 <div class:list={["gallery-item", widthClasses[row[0].width]]}>
                     <img src={row[0].src} alt={row[0].alt} />
                 </div>
-                <div class:list={["gallery-item", widthClasses[row[1].width]]}>
+                <div class="gallery-item flex-1">
                     <img src={row[1].src} alt={row[1].alt} />
                 </div>
             </div>
