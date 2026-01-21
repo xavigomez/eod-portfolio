@@ -1,0 +1,42 @@
+---
+import { Button } from "~/components/ui/button";
+
+interface Props {
+    class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<section id="about" class:list={["space-y-12", className]}>
+    <div
+        class="flex items-end [&>hr]:border-t-2 [&>hr]:border-foreground [&>hr]:mb-2"
+    >
+        <h2 class="text-5xl sm:text-7xl font-bold">About me</h2>
+        <hr class="flex-1" />
+        <hr class="w-14 ml-2" />
+    </div>
+    <div
+        class="flex gap-6 md:gap-4 items-center justify-between flex-col md:flex-row"
+    >
+        <div class="w-full md:w-1/2">
+            <img
+                src="https://picsum.photos/288/338?22"
+                alt="About me"
+                class="w-72 aspect-auto mx-auto"
+            />
+        </div>
+        <div class="w-full md:w-1/2 space-y-6">
+            <p class="text-xl">
+                I’m a product designer with over 6 years of experience,
+                combining analytical thinking with creative problem-solving. I
+                focus on end-to-end product design that turns complex problems
+                into clear, user-centered solutions with real business impact.
+            </p>
+            <p class="text-xl font-bold">Do you want to know more?</p>
+            <Button size="lg">
+                <a href="/about-me">More about me</a>
+            </Button>
+        </div>
+    </div>
+</section>
