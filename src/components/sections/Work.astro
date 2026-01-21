@@ -1,0 +1,24 @@
+---
+import WorkShowcase from "~/components/work/WorkShowcase.astro";
+import { work } from "~/data/home";
+
+interface Props {
+    class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<section id="work" class:list={["space-y-12", className]}>
+    <div
+        class="flex items-end [&>hr]:border-t-2 [&>hr]:border-foreground [&>hr]:mb-2"
+    >
+        <hr class="w-14 mr-2" />
+        <hr class="flex-1" />
+        <h2 class="text-5xl sm:text-7xl font-bold">Work</h2>
+    </div>
+
+    <div class="space-y-8">
+        {work.map((item) => <WorkShowcase {...item} />)}
+    </div>
+</section>

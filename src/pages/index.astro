@@ -3,6 +3,7 @@ import Layout from "~/layouts/Layout.astro";
 import Badges from "~/components/sections/Badges.astro";
 import Gallery from "~/components/sections/Gallery.astro";
 import Introduction from "~/components/sections/Introduction.astro";
+import Work from "~/components/sections/Work.astro";
 import { gallery } from "~/data/home";
 ---
 
@@ -11,5 +12,62 @@ import { gallery } from "~/data/home";
         <Introduction />
         <Badges class="mt-6" />
         <Gallery class="mt-24" rows={gallery} />
+        <Work class="mt-24" />
     </div>
 </Layout>
+
+<!-- FIXME: extract to a common place, it is shared with Gallery.astro -->
+<style>
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        perspective: 1000px;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease-out;
+    }
+
+    .gallery-item::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.15);
+        transition: opacity 0.3s ease-out;
+        pointer-events: none;
+        border-radius: inherit;
+    }
+
+    .gallery-item:hover::after {
+        opacity: 0;
+    }
+</style>
+
+<!-- FIXME: extract to a common place, it is shared with Gallery.astro -->
+<script>
+    document.querySelectorAll(".gallery-item").forEach((item) => {
+        const el = item as HTMLElement;
+        const img = el.querySelector("img");
+        if (!img) return;
+
+        el.addEventListener("mousemove", (e) => {
+            const rect = el.getBoundingClientRect();
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const x = e.clientX - rect.left - centerX;
+            const y = e.clientY - rect.top - centerY;
+
+            const rotateX = (y / centerY) * -8;
+            const rotateY = (x / centerX) * 8;
+
+            img.style.transform = `scale(1.1) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        el.addEventListener("mouseleave", () => {
+            img.style.transform = "";
+        });
+    });
+</script>
