@@ -1,13 +1,5 @@
 ---
-export type Width = "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "2/5" | "3/5";
-
-export interface GalleryImage {
-    src: string;
-    alt: string;
-    width: Width;
-}
-
-export type GalleryRow = [GalleryImage, GalleryImage];
+import type { Width, GalleryRow } from "~/types/gallery";
 
 interface Props {
     class?: string;
@@ -22,6 +14,7 @@ const widthClasses: Record<Width, string> = {
     "3/6": "w-3/6",
     "4/6": "w-4/6",
     "5/6": "w-5/6",
+    "1/5": "w-1/5",
     "2/5": "w-2/5",
     "3/5": "w-3/5",
 };
