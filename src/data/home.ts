@@ -69,7 +69,7 @@ export const work: WorkShowcase[] = [
     ],
   },
   {
-    company: "marketgoo",
+    company: "eventscase",
     period: "2021 - 2023",
     description:
       "An all-in-one <strong>event management platform</strong> enabling organizers to plan, manage, and deliver virtual, in-person, and hybrid events. All within a single product.",
