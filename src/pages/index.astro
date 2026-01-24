@@ -1,5 +1,5 @@
 ---
-import Layout from "~/layouts/Layout.astro";
+import MainLayout from "~/layouts/MainLayout.astro";
 import Badges from "~/components/sections/Badges.astro";
 import Gallery from "~/components/sections/Gallery.astro";
 import Introduction from "~/components/sections/Introduction.astro";
@@ -9,7 +9,7 @@ import About from "~/components/sections/About.astro";
 import Contact from "~/components/sections/Contact.astro";
 ---
 
-<Layout>
+<MainLayout>
     <div class="px-4 py-2 sm:px-8 sm:py-4 lg:p-0">
         <Introduction />
         <Badges class="mt-6" />
@@ -18,7 +18,7 @@ import Contact from "~/components/sections/Contact.astro";
         <About class="mt-24" />
         <Contact class="mt-24" />
     </div>
-</Layout>
+</MainLayout>
 
 <!-- FIXME: extract to a common place, it is shared with Gallery.astro -->
 <style>
