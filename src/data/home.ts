@@ -117,7 +117,7 @@ export const work: WorkShowcase[] = [
           "Multi-brand new design system adapted to the new branding.",
         image: "/images/home/showcase/home-showcase-eventscase-1.png",
         imageAlt: "Screenshot of the Eventscase Design System components",
-        href: "/",
+        href: "/project/eventscase-design-system",
         tags: [
           {
             text: "delivery speed up",
