@@ -67,8 +67,8 @@ export const project: Project = {
     text: `
   This new reality could have been seen as a problem, but at <strong>Eventscase</strong> we decided to embrace the situation and evolve with it. Rather than a problem, it <strong>became an opportunity</strong> to change and grow by reaching new markets and being useful to more users.
   `,
-    gradientFrom: "emerald-100",
-    gradientTo: "purple-200",
+    gradientFrom: "#d1fae5",
+    gradientTo: "#e9d5ff",
   },
   process: {
     subtitle:
