@@ -53,7 +53,7 @@ export const work: WorkShowcase[] = [
         image: "/images/home/showcase/home-showcase-marketgoo-0.png",
         imageAlt:
           "Screenshot of the Content Auto-Optimization feature interface",
-        href: "/",
+        href: "/project/marketgoo-content-auto-optimization",
         tags: [
           {
             text: "partner adoption",
