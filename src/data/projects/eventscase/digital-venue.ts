@@ -5,7 +5,7 @@ export const project: Project = {
   meta: {
     title: "Digital Venue",
     description: "A new tool designed to easily host remote and hybrid events.",
-    image: "/images/home/showcase/home-showcase-eventscase-0.png",
+    image: "/images/showcase/eventscase-digital-venue/digital-venue-hero.png",
   },
   slug: "eventscase-digital-venue",
   header: {
@@ -34,7 +34,7 @@ export const project: Project = {
       },
     ],
   },
-  hero: "/images/home/showcase/home-showcase-eventscase-0.png",
+  hero: "/images/showcase/eventscase-digital-venue/digital-venue-hero.png",
   context: {
     items: [
       {
@@ -73,7 +73,8 @@ export const project: Project = {
   process: {
     subtitle:
       "From research to delivery, the process balanced user and business needs.",
-    image: "https://placehold.co/360x480",
+    image:
+      "/images/showcase/eventscase-digital-venue/digital-venue-process.png",
     items: [
       {
         title: "Research & Discovery",
@@ -101,23 +102,23 @@ export const project: Project = {
     rows: [
       [
         {
-          src: "/images/showcase/events-case/eventscase-showcase-1-1-1.png",
+          src: "/images/showcase/eventscase-digital-venue/gallery/digital-venue-gallery-1-1-1.png",
           alt: "A man sitting in a turned chair giving a speech to an off frame crowd",
           width: "2/5",
         },
         {
-          src: "/images/showcase/events-case/eventscase-showcase-1-1-2.png",
+          src: "/images/showcase/eventscase-digital-venue/gallery/digital-venue-gallery-1-1-2.png",
           alt: "Events case logo in white over sea green background",
         },
       ],
       [
         {
-          src: "/images/showcase/events-case/eventscase-showcase-1-2-1.png",
+          src: "/images/showcase/eventscase-digital-venue/gallery/digital-venue-gallery-1-2-1.png",
           alt: "An image depicting several different images of the Digital Venue in a design file",
           width: "4/5",
         },
         {
-          src: "/images/showcase/events-case/eventscase-showcase-1-2-2.png",
+          src: "/images/showcase/eventscase-digital-venue/gallery/digital-venue-gallery-1-2-2.png",
           alt: "A drawing of person designing",
         },
       ],
@@ -128,17 +129,17 @@ export const project: Project = {
       {
         title: "+15% growth during the pandemic",
         text: "enabling Eventscase to continue hosting events while increasing sales in a highly uncertain period.",
-        icon: "https://placehold.co/96x96",
+        icon: "/images/showcase/eventscase-digital-venue/outcomes/digital-venue-outcome-1.svg",
       },
       {
-        title: "+15% growth during the pandemic",
-        text: "enabling Eventscase to continue hosting events while increasing sales in a highly uncertain period.",
-        icon: "https://placehold.co/96x96",
+        title: "~40% of active clients use the Digital Venue",
+        text: "demonstrating strong adoption and relevance of the new product offering.",
+        icon: "/images/showcase/eventscase-digital-venue/outcomes/digital-venue-outcome-2.svg",
       },
       {
-        title: "+15% growth during the pandemic",
-        text: "enabling Eventscase to continue hosting events while increasing sales in a highly uncertain period.",
-        icon: "https://placehold.co/96x96",
+        title: "Built-in analytics and engagement features",
+        text: "demonstrating strong adoption and relevance of the new product offering.",
+        icon: "/images/showcase/eventscase-digital-venue/outcomes/digital-venue-outcome-3.svg",
       },
     ],
   },
