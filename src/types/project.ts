@@ -39,7 +39,7 @@ export interface ProjectProcessItem {
 
 export interface ProjectProcess {
   subtitle: string;
-  image: string;
+  images: string[];
   items: ProjectProcessItem[];
 }
 

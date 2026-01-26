@@ -73,8 +73,12 @@ export const project: Project = {
   process: {
     subtitle:
       "From research to delivery, the process balanced user and business needs.",
-    image:
-      "/images/showcase/eventscase-digital-venue/digital-venue-process.png",
+    images: [
+      "/images/showcase/eventscase-digital-venue/process/digital-venue-process-1.png",
+      "/images/showcase/eventscase-digital-venue/process/digital-venue-process-2.png",
+      "/images/showcase/eventscase-digital-venue/process/digital-venue-process-3.png",
+      "/images/showcase/eventscase-digital-venue/process/digital-venue-process-4.png",
+    ],
     items: [
       {
         title: "Research & Discovery",

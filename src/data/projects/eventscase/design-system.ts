@@ -66,8 +66,13 @@ export const project: Project = {
   process: {
     subtitle:
       "A structured process to build a scalable and consistent design system.",
-    image:
-      "/images/showcase/eventscase-design-system/design-system-process.png",
+    images: [
+      "/images/showcase/eventscase-design-system/process/design-system-process-1.png",
+      "/images/showcase/eventscase-design-system/process/design-system-process-2.png",
+      "/images/showcase/eventscase-design-system/process/design-system-process-3.png",
+      "/images/showcase/eventscase-design-system/process/design-system-process-4.png",
+      "/images/showcase/eventscase-design-system/process/design-system-process-5.png",
+    ],
     items: [
       {
         title: "Audit",

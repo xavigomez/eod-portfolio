@@ -74,9 +74,13 @@ export const project: Project = {
   },
   process: {
     subtitle:
-      "A structured process to build a scalable and consistent design system.",
-    image:
-      "/images/showcase/marketgoo-content-auto-optimization/content-auto-optimization-process.png",
+      "From research to delivery, the process balanced user and business needs.",
+    images: [
+      "/images/showcase/marketgoo-content-auto-optimization/process/content-auto-optimization-process-1.png",
+      "/images/showcase/marketgoo-content-auto-optimization/process/content-auto-optimization-process-2.png",
+      "/images/showcase/marketgoo-content-auto-optimization/process/content-auto-optimization-process-3.png",
+      "/images/showcase/marketgoo-content-auto-optimization/process/content-auto-optimization-process-4.png",
+    ],
     items: [
       {
         title: "Research",
