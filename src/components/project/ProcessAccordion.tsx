@@ -24,7 +24,6 @@ export function ProcessAccordion({
   return (
     <Accordion
       type="single"
-      collapsible
       className={className}
       defaultValue={`${projectSlug}-1`}
     >
