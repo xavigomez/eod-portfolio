@@ -99,7 +99,7 @@ export const work: WorkShowcase[] = [
           "A new tool designed to easily host remote and hybrid events.",
         image: "/images/home/showcase/home-showcase-eventscase-0.png",
         imageAlt: "Screenshot of the Digital Venue virtual event platform",
-        href: "/",
+        href: "/project/eventscase-digital-venue",
         tags: [
           {
             text: "Recurrence",

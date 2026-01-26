@@ -1,1 +1,209 @@
-<div>Eventscase digital venue project</div>
+---
+import { project } from "~/data/projects/eventscase/digital-venue";
+
+import MainLayout from "~/layouts/Main.astro";
+import HeadProject from "~/components/head/HeadProject.astro";
+import Contact from "~/components/sections/Contact.astro";
+import Gallery from "~/components/sections/Gallery.astro";
+
+import { Badge } from "~/components/ui/badge";
+import { ProcessAccordion } from "~/components/project/ProcessAccordion";
+
+const positive = [1, 2, 3];
+const negative = [-3, -2, -1];
+const all = [...negative, ...positive];
+
+const getRotation = (prev?: number) => {
+    if (prev === undefined) {
+        return all[Math.floor(Math.random() * all.length)];
+    }
+    const pool = (prev > 0 ? negative : positive).filter(
+        (n) => Math.abs(n) !== Math.abs(prev),
+    );
+    return pool[Math.floor(Math.random() * pool.length)];
+};
+---
+
+<MainLayout>
+    <HeadProject
+        slot="head"
+        title={project.meta.title}
+        description={project.meta.description}
+        image={project.meta.image}
+    />
+    <div class="px-4 py-2 sm:px-8 sm:py-4 lg:p-0 space-y-12 md:space-y-24">
+        <section id="project_header" class="flex gap-4 flex-col md:flex-row">
+            <div class="space-y-2 w-full md:w-2/3">
+                <h1
+                    class="text-7xl xl:text-[98px] font-bold tracking-[-0.04em] leading-[0.85]"
+                >
+                    {project.header.title}
+                </h1>
+                <h2 class="text-2xl xl:text-[28px] leading-[1.2] mt-2">
+                    {project.header.subtitle}
+                </h2>
+            </div>
+            <div class="w-full md:w-1/3 flex flex-wrap gap-2">
+                {
+                    (() => {
+                        let prev: number | undefined;
+                        return project.header.tags.map((tag) => {
+                            const rotation = getRotation(prev);
+                            prev = rotation;
+                            return (
+                                <Badge
+                                    variant={"outline"}
+                                    className="border-foreground bg-white md:px-3 md:py-1 md:text-base"
+                                    style={{
+                                        transform: `rotate(${rotation}deg)`,
+                                    }}
+                                >
+                                    <strong>{tag.highlight}</strong>
+                                    <span>{tag.text}</span>
+                                </Badge>
+                            );
+                        });
+                    })()
+                }
+            </div>
+        </section>
+        <section id="project_hero-image" class="gallery-item rounded-2xl">
+            <img
+                src={project.hero}
+                alt={project.header.title}
+                class="w-full rounded-2xl"
+            />
+        </section>
+        <section id="project_context" class="space-y-12">
+            {
+                project.context.items.map((item) => (
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <h3 class="w-full md:w-1/3 xl:text-5xl font-bold text-4xl">
+                            {item.header}
+                        </h3>
+                        <p class="w-full md:w-2/3" set:html={item.text} />
+                    </div>
+                ))
+            }
+        </section>
+        <section id="project_highlight">
+            <p
+                set:html={project.highlight.text}
+                class:list={[
+                    "text-lg md:text-xl px-10 py-8 sm:px-20 sm:py-16 rounded-4xl bg-linear-to-br",
+                    `from-${project.highlight.gradientFrom}`,
+                    `to-${project.highlight.gradientTo}`,
+                ]}
+            />
+        </section>
+        <section id="project_design-process">
+            <div class="flex gap-23">
+                <div class="gallery-item hidden xl:block rounded-4xl">
+                    <img
+                        src={project.process.image}
+                        alt=""
+                        class="rounded-4xl"
+                    />
+                </div>
+                <div class="flex-1 space-y-6">
+                    <div class="space-y-2">
+                        <h3 class="xl:text-5xl font-bold text-4xl">
+                            Design process
+                        </h3>
+                        <p class="text-base">
+                            {project.process.subtitle}
+                        </p>
+                    </div>
+                    <ProcessAccordion
+                        process={project.process.items}
+                        projectSlug={project.slug}
+                        client:load
+                    />
+                </div>
+            </div>
+        </section>
+        <Gallery rows={project.gallery.rows} />
+        <section
+            id="project_key-outcomes-and-results"
+            class="bg-white border border-foreground"
+        >
+            <div class="p-6 text-center border-b border-foreground">
+                <h3 class="xl:text-5xl font-bold text-4xl">
+                    Key Outcomes & Results
+                </h3>
+            </div>
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-6 [&>div]:flex [&>div]:px-4 [&>div]:py-12 [&>div]:items-center [&>div]:flex-col [&>div]:gap-2 [&>div]:text-center [&>div]:border-foreground [&>div]:border-b [&>div:last-child]:border-b-0 md:[&>div]:border-b-0 md:[&>div]:border-r md:[&>div:last-child]:border-r-0"
+            >
+                {
+                    project.outcomes.items.map((outcome) => {
+                        return (
+                            <div>
+                                <img src={outcome.icon} alt={outcome.title} />
+                                <h4 class="text-2xl font-bold">
+                                    {outcome.title}
+                                </h4>
+                                <p>{outcome.text}</p>
+                            </div>
+                        );
+                    })
+                }
+            </div>
+        </section>
+        <Contact />
+    </div>
+</MainLayout>
+
+<style>
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        perspective: 1000px;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease-out;
+    }
+
+    .gallery-item::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.15);
+        transition: opacity 0.3s ease-out;
+        pointer-events: none;
+        border-radius: inherit;
+    }
+
+    .gallery-item:hover::after {
+        opacity: 0;
+    }
+</style>
+
+<script>
+    document.querySelectorAll(".gallery-item").forEach((item) => {
+        const el = item as HTMLElement;
+        const img = el.querySelector("img");
+        if (!img) return;
+
+        el.addEventListener("mousemove", (e) => {
+            const rect = el.getBoundingClientRect();
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const x = e.clientX - rect.left - centerX;
+            const y = e.clientY - rect.top - centerY;
+
+            const rotateX = (y / centerY) * -8;
+            const rotateY = (x / centerX) * 8;
+
+            img.style.transform = `scale(1.1) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        el.addEventListener("mouseleave", () => {
+            img.style.transform = "";
+        });
+    });
+</script>
