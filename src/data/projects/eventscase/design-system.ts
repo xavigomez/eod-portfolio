@@ -66,7 +66,8 @@ export const project: Project = {
   process: {
     subtitle:
       "A structured process to build a scalable and consistent design system.",
-    image: "https://placehold.co/360x480",
+    image:
+      "/images/showcase/eventscase-design-system/design-system-process.png",
     items: [
       {
         title: "Audit",
