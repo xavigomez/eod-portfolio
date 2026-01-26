@@ -1,5 +1,5 @@
 ---
-import { project } from "~/data/projects/eventscase/digital-venue";
+import { projects } from "~/data/projects";
 
 import MainLayout from "~/layouts/Main.astro";
 import HeadProject from "~/components/head/HeadProject.astro";
@@ -8,6 +8,15 @@ import Gallery from "~/components/sections/Gallery.astro";
 
 import { Badge } from "~/components/ui/badge";
 import { ProcessAccordion } from "~/components/project/ProcessAccordion";
+
+export function getStaticPaths() {
+    return projects.map((project) => ({
+        params: { slug: project.slug },
+        props: { project },
+    }));
+}
+
+const { project } = Astro.props;
 
 const positive = [1, 2, 3];
 const negative = [-3, -2, -1];
