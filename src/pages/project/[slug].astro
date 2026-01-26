@@ -145,7 +145,11 @@ const getRotation = (prev?: number) => {
                     project.outcomes.items.map((outcome) => {
                         return (
                             <div>
-                                <img src={outcome.icon} alt={outcome.title} />
+                                <img
+                                    src={outcome.icon}
+                                    alt={outcome.title}
+                                    class="max-w-24"
+                                />
                                 <h4 class="text-2xl font-bold">
                                     {outcome.title}
                                 </h4>
