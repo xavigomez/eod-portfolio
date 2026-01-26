@@ -28,13 +28,16 @@ export function ProcessAccordion({
 
   return (
     <div className={`flex gap-23 ${className || ""}`}>
-      <div className="gallery-item hidden md:block rounded-4xl w-50 h-67 lg:w-70 lg:h-93 xl:w-90 xl:h-120 shrink-0 relative overflow-hidden">
+      <div
+        className="gallery-item hidden md:block rounded-4xl w-50 h-67 lg:w-70 lg:h-93 xl:w-90 xl:h-120 shrink-0 relative overflow-hidden"
+        style={{ perspective: "1000px" }}
+      >
         {images.map((src, index) => (
           <img
             key={src}
             src={src}
             alt=""
-            className={`rounded-4xl w-full h-full object-cover absolute inset-0 transition-opacity duration-300 ${
+            className={`rounded-4xl w-full h-full object-cover absolute inset-0 transition-all duration-300 ease-out ${
               index === activeIndex ? "opacity-100" : "opacity-0"
             }`}
           />
