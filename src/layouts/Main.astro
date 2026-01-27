@@ -4,6 +4,7 @@ import { ClientRouter } from "astro:transitions";
 import DesktopNav from "~/components/navigation/DesktopNav.astro";
 import MobileNav from "~/components/navigation/MobileNav.astro";
 import Footer from "~/components/Footer.astro";
+import Analytics from "@vercel/analytics/astro";
 ---
 
 <!doctype html>
@@ -113,5 +114,6 @@ import Footer from "~/components/Footer.astro";
                 }
             });
         </script>
+        <Analytics />
     </body>
 </html>
