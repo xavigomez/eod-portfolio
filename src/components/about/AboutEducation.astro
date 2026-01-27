@@ -1,0 +1,26 @@
+---
+import type { EducationItem } from "~/types/about";
+
+interface Props {
+    class?: string;
+    items: EducationItem[];
+}
+
+const { class: className, items } = Astro.props;
+---
+
+<section id="education" class:list={["space-y-6", className]}>
+    <h2 class="text-5xl font-extrabold tracking-[-0.02em]">Education</h2>
+    <ul class="space-y-4">
+        {
+            items.map((item) => (
+                <li>
+                    <p class="font-bold">{item.title}</p>
+                    <p class="text-muted-foreground">
+                        {item.institution} [{item.year}]
+                    </p>
+                </li>
+            ))
+        }
+    </ul>
+</section>

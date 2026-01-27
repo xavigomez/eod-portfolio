@@ -22,28 +22,28 @@ const workSublinks: SubLink[] = [
 const aboutSublinks: SubLink[] = [
   {
     label: "Me",
-    href: "foo",
+    href: "/about-me#me",
   },
   {
     label: "Education",
-    href: "foo",
+    href: "/about-me#education",
   },
   {
-    label: "reviews",
-    href: "foo",
+    label: "Reviews",
+    href: "/about-me#reviews",
   },
 ];
 
 const links: NavLink[] = [
   {
     label: "Work",
-    href: "#work",
+    href: "/#work",
     type: "work",
     sublinks: workSublinks,
   },
   {
-    label: "About",
-    href: "/#about",
+    label: "About me",
+    href: "/about-me#top",
     type: "about",
     sublinks: aboutSublinks,
   },

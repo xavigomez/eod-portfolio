@@ -1,0 +1,13 @@
+---
+interface Props {
+    class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class:list={["flex items-end [&>hr]:border-t-2 [&>hr]:border-foreground [&>hr]:mb-2", className]}>
+    <h1 class="text-5xl sm:text-7xl font-bold">About me</h1>
+    <hr class="flex-1" />
+    <hr class="w-14 ml-2" />
+</div>

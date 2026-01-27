@@ -52,4 +52,8 @@
     .gallery-item:hover::after {
         opacity: 0;
     }
+
+    .tilt-card {
+        transition: transform 0.15s ease-out;
+    }
 }

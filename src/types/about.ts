@@ -1,0 +1,29 @@
+export interface AboutMeta {
+  title: string;
+  description: string;
+  image: string;
+}
+
+export interface EducationItem {
+  title: string;
+  institution: string;
+  year: string;
+}
+
+export interface Review {
+  avatar: string;
+  name: string;
+  role: string;
+  quote: string;
+  company: string;
+  year: string;
+}
+
+export interface AboutData {
+  meta: AboutMeta;
+  image: string;
+  bio: string[];
+  education: EducationItem[];
+  values: string[];
+  reviews: Review[];
+}

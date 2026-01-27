@@ -1,0 +1,32 @@
+---
+import MainLayout from "~/layouts/Main.astro";
+import HeadProject from "~/components/head/HeadProject.astro";
+import Contact from "~/components/sections/Contact.astro";
+
+import AboutHeader from "~/components/about/AboutHeader.astro";
+import AboutMeSection from "~/components/about/AboutMe.astro";
+import AboutEducation from "~/components/about/AboutEducation.astro";
+import AboutValues from "~/components/about/AboutValues.astro";
+import AboutReviews from "~/components/about/AboutReviews.astro";
+
+import { about } from "~/data/about";
+---
+
+<MainLayout>
+    <HeadProject
+        slot="head"
+        title={about.meta.title}
+        description={about.meta.description}
+        image={about.meta.image}
+    />
+    <div class="px-4 py-2 sm:px-8 sm:py-4 lg:p-0 space-y-12 md:space-y-24">
+        <AboutHeader />
+        <AboutMeSection image={about.image} bio={about.bio} />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <AboutEducation items={about.education} />
+            <AboutValues items={about.values} />
+        </div>
+        <AboutReviews items={about.reviews} />
+        <Contact />
+    </div>
+</MainLayout>

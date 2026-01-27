@@ -1,0 +1,15 @@
+---
+interface Props {
+    class?: string;
+    items: string[];
+}
+
+const { class: className, items } = Astro.props;
+---
+
+<section id="values" class:list={["space-y-6", className]}>
+    <h2 class="text-5xl font-extrabold tracking-[-0.02em]">Values</h2>
+    <ul class="space-y-2 list-disc list-inside">
+        {items.map((item) => <li>{item}</li>)}
+    </ul>
+</section>
