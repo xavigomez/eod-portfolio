@@ -71,7 +71,7 @@ export const work: WorkShowcase[] = [
           "Reducing friction and helping users reach first value faster.",
         image: "/images/home/showcase/home-showcase-marketgoo-1.png",
         imageAlt: "Screenshot of the Smarter Onboarding flow interface",
-        href: "/",
+        href: "/project/marketgoo-smarter-onboarding", // TODO: Add project data
         tags: [
           {
             text: "activation rate",
@@ -145,7 +145,7 @@ export const work: WorkShowcase[] = [
           "Simplify and automate the renta process to help users save time and money.",
         image: "/images/home/showcase/home-showcase-declarando.png",
         imageAlt: "Screenshot of the Declarando Renta Revamp interface",
-        href: "/",
+        href: "/project/declarando-renta-revamp", // TODO: Add project data
         tags: [
           {
             text: "utilization",
