@@ -1,6 +1,6 @@
 ---
 import MainLayout from "~/layouts/Main.astro";
-import HeadProject from "~/components/head/HeadProject.astro";
+import HeadAbout from "~/components/head/HeadAbout.astro";
 import Contact from "~/components/sections/Contact.astro";
 
 import AboutHeader from "~/components/about/AboutHeader.astro";
@@ -13,7 +13,7 @@ import { about } from "~/data/about";
 ---
 
 <MainLayout>
-    <HeadProject
+    <HeadAbout
         slot="head"
         title={about.meta.title}
         description={about.meta.description}
