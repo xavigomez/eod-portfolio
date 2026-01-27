@@ -59,7 +59,7 @@ const getRotation = (prev?: number) => {
         projects.map((project) => (
             <a
                 href={project.href}
-                class="project-card rounded-4xl bg-white border p-4 border-foreground flex flex-col sm:flex-row gap-4 cursor-pointer"
+                class="project-card tilt-card rounded-4xl bg-white border p-4 border-foreground flex flex-col sm:flex-row gap-4 cursor-pointer shadow-lg"
             >
                 <div class="project-image sm:w-1/2 h-52">
                     <img src={project.image} alt={project.imageAlt} />
