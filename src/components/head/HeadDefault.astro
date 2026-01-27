@@ -1,1 +1,24 @@
-<title>Elisabet Osuna - Product Designer</title>
+---
+const title = "Elisabet Osuna - Product Designer";
+const description =
+    "Product designer with 6+ years of experience designing great user experiences and impactful products that help businesses grow.";
+const image = "https://placehold.co/1200x630/f5f5f4/1c1917?text=Elisabet+Osuna"; // FIXME: Add proper OG image (1200x630px)
+const siteUrl = "https://elisabetosuna.com";
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={siteUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={siteUrl} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />

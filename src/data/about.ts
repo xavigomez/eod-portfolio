@@ -2,10 +2,10 @@ import type { AboutData } from "~/types/about";
 
 export const about: AboutData = {
   meta: {
-    title: "About me - Elisabet Osuna",
+    title: "About me",
     description:
       "Product designer with over 6 years of experience, combining analytical thinking with creative problem-solving.",
-    image: "/images/me.jpg",
+    image: "https://placehold.co/1200x630/f5f5f4/1c1917?text=About+Me", // FIXME: Add proper OG image for about page (1200x630px)
   },
   image: "/images/me.jpg",
   bio: [

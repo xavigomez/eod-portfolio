@@ -1,5 +1,6 @@
 ---
 import MainLayout from "~/layouts/Main.astro";
+import HeadDefault from "~/components/head/HeadDefault.astro";
 import Badges from "~/components/sections/Badges.astro";
 import Gallery from "~/components/sections/Gallery.astro";
 import Introduction from "~/components/sections/Introduction.astro";
@@ -10,6 +11,7 @@ import Contact from "~/components/sections/Contact.astro";
 ---
 
 <MainLayout>
+    <HeadDefault slot="head" />
     <div class="px-4 py-2 sm:px-8 sm:py-4 lg:p-0">
         <Introduction />
         <Badges class="mt-6" />
