@@ -1,11 +1,25 @@
 import type { Project } from "~/types/project";
 
+// Images
+import heroImage from "~/assets/images/showcase/eventscase-digital-venue/digital-venue-hero.png";
+import processImage1 from "~/assets/images/showcase/eventscase-digital-venue/process/digital-venue-process-1.png";
+import processImage2 from "~/assets/images/showcase/eventscase-digital-venue/process/digital-venue-process-2.png";
+import processImage3 from "~/assets/images/showcase/eventscase-digital-venue/process/digital-venue-process-3.png";
+import processImage4 from "~/assets/images/showcase/eventscase-digital-venue/process/digital-venue-process-4.png";
+import galleryImage1_1 from "~/assets/images/showcase/eventscase-digital-venue/gallery/digital-venue-gallery-1-1-1.png";
+import galleryImage1_2 from "~/assets/images/showcase/eventscase-digital-venue/gallery/digital-venue-gallery-1-1-2.png";
+import galleryImage2_1 from "~/assets/images/showcase/eventscase-digital-venue/gallery/digital-venue-gallery-1-2-1.png";
+import galleryImage2_2 from "~/assets/images/showcase/eventscase-digital-venue/gallery/digital-venue-gallery-1-2-2.png";
+import outcomeIcon1 from "~/assets/images/showcase/eventscase-digital-venue/outcomes/digital-venue-outcome-1.svg";
+import outcomeIcon2 from "~/assets/images/showcase/eventscase-digital-venue/outcomes/digital-venue-outcome-2.svg";
+import outcomeIcon3 from "~/assets/images/showcase/eventscase-digital-venue/outcomes/digital-venue-outcome-3.svg";
+
 export const project: Project = {
   // TODO: Add relevant meta data here, let's talk to @Eli about this.
   meta: {
     title: "Digital Venue",
     description: "A new tool designed to easily host remote and hybrid events.",
-    image: "/images/showcase/eventscase-digital-venue/digital-venue-hero.png",
+    image: heroImage,
   },
   slug: "eventscase-digital-venue",
   header: {
@@ -34,7 +48,7 @@ export const project: Project = {
       },
     ],
   },
-  hero: "/images/showcase/eventscase-digital-venue/digital-venue-hero.png",
+  hero: heroImage,
   context: {
     items: [
       {
@@ -73,12 +87,7 @@ export const project: Project = {
   process: {
     subtitle:
       "From research to delivery, the process balanced user and business needs.",
-    images: [
-      "/images/showcase/eventscase-digital-venue/process/digital-venue-process-1.png",
-      "/images/showcase/eventscase-digital-venue/process/digital-venue-process-2.png",
-      "/images/showcase/eventscase-digital-venue/process/digital-venue-process-3.png",
-      "/images/showcase/eventscase-digital-venue/process/digital-venue-process-4.png",
-    ],
+    images: [processImage1, processImage2, processImage3, processImage4],
     items: [
       {
         title: "Research & Discovery",
@@ -106,23 +115,23 @@ export const project: Project = {
     rows: [
       [
         {
-          src: "/images/showcase/eventscase-digital-venue/gallery/digital-venue-gallery-1-1-1.png",
+          src: galleryImage1_1,
           alt: "A man sitting in a turned chair giving a speech to an off frame crowd",
           width: "2/5",
         },
         {
-          src: "/images/showcase/eventscase-digital-venue/gallery/digital-venue-gallery-1-1-2.png",
+          src: galleryImage1_2,
           alt: "Events case logo in white over sea green background",
         },
       ],
       [
         {
-          src: "/images/showcase/eventscase-digital-venue/gallery/digital-venue-gallery-1-2-1.png",
+          src: galleryImage2_1,
           alt: "An image depicting several different images of the Digital Venue in a design file",
           width: "4/5",
         },
         {
-          src: "/images/showcase/eventscase-digital-venue/gallery/digital-venue-gallery-1-2-2.png",
+          src: galleryImage2_2,
           alt: "A drawing of person designing",
         },
       ],
@@ -133,17 +142,17 @@ export const project: Project = {
       {
         title: "+15% growth during the pandemic",
         text: "enabling Eventscase to continue hosting events while increasing sales in a highly uncertain period.",
-        icon: "/images/showcase/eventscase-digital-venue/outcomes/digital-venue-outcome-1.svg",
+        icon: outcomeIcon1,
       },
       {
         title: "~40% of active clients use the Digital Venue",
         text: "demonstrating strong adoption and relevance of the new product offering.",
-        icon: "/images/showcase/eventscase-digital-venue/outcomes/digital-venue-outcome-2.svg",
+        icon: outcomeIcon2,
       },
       {
         title: "Built-in analytics and engagement features",
         text: "demonstrating strong adoption and relevance of the new product offering.",
-        icon: "/images/showcase/eventscase-digital-venue/outcomes/digital-venue-outcome-3.svg",
+        icon: outcomeIcon3,
       },
     ],
   },

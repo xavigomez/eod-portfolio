@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { Button } from "~/components/ui/button";
+import meImage from "~/assets/images/me.jpg";
 
 interface Props {
     class?: string;
@@ -21,12 +23,17 @@ const { class: className } = Astro.props;
     >
         <div class="w-full md:w-1/2 flex justify-center">
             <div class="gallery-item w-72 rounded-4xl">
-                <img src="/images/me.jpg" alt="About me" class="aspect-auto" />
+                <Image
+                    src={meImage}
+                    alt="About me"
+                    class="aspect-auto"
+                    loading="lazy"
+                />
             </div>
         </div>
         <div class="w-full md:w-1/2 space-y-6">
             <p class="text-xl">
-                I’m a product designer with over 6 years of experience,
+                I'm a product designer with over 6 years of experience,
                 combining analytical thinking with creative problem-solving. I
                 focus on end-to-end product design that turns complex problems
                 into clear, user-centered solutions with real business impact.

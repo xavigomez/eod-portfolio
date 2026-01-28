@@ -1,3 +1,5 @@
+import type { ImageMetadata } from "astro";
+
 export interface AboutMeta {
   title: string;
   description: string;
@@ -11,7 +13,7 @@ export interface EducationItem {
 }
 
 export interface Review {
-  avatar: string;
+  avatar: ImageMetadata;
   name: string;
   role: string;
   quote: string;
@@ -21,7 +23,7 @@ export interface Review {
 
 export interface AboutData {
   meta: AboutMeta;
-  image: string;
+  image: ImageMetadata;
   bio: string[];
   education: EducationItem[];
   values: string[];

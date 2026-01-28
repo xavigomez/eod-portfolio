@@ -1,12 +1,25 @@
 import type { Project } from "~/types/project";
 
+// Images
+import heroImage from "~/assets/images/showcase/marketgoo-content-auto-optimization/content-auto-optimization-hero.png";
+import processImage1 from "~/assets/images/showcase/marketgoo-content-auto-optimization/process/content-auto-optimization-process-1.png";
+import processImage2 from "~/assets/images/showcase/marketgoo-content-auto-optimization/process/content-auto-optimization-process-2.png";
+import processImage3 from "~/assets/images/showcase/marketgoo-content-auto-optimization/process/content-auto-optimization-process-3.png";
+import processImage4 from "~/assets/images/showcase/marketgoo-content-auto-optimization/process/content-auto-optimization-process-4.png";
+import galleryImage1_1 from "~/assets/images/showcase/marketgoo-content-auto-optimization/gallery/content-auto-optimization-gallery-1-1-1.png";
+import galleryImage1_2 from "~/assets/images/showcase/marketgoo-content-auto-optimization/gallery/content-auto-optimization-gallery-1-1-2.png";
+import galleryImage2_1 from "~/assets/images/showcase/marketgoo-content-auto-optimization/gallery/content-auto-optimization-gallery-1-2-1.png";
+import galleryImage2_2 from "~/assets/images/showcase/marketgoo-content-auto-optimization/gallery/content-auto-optimization-gallery-1-2-2.png";
+import outcomeIcon1 from "~/assets/images/showcase/marketgoo-content-auto-optimization/outcomes/content-auto-optimization-outcome-1.svg";
+import outcomeIcon2 from "~/assets/images/showcase/marketgoo-content-auto-optimization/outcomes/content-auto-optimization-outcome-2.svg";
+import outcomeIcon3 from "~/assets/images/showcase/marketgoo-content-auto-optimization/outcomes/content-auto-optimization-outcome-3.svg";
+
 export const project: Project = {
   meta: {
     title: "Content Auto-Optimization",
     description:
       "AI-powered, automated content optimization for non-technical users.",
-    image:
-      "/images/showcase/marketgoo-content-auto-optimization/content-auto-optimization-hero.png",
+    image: heroImage,
   },
   slug: "marketgoo-content-auto-optimization",
   header: {
@@ -36,7 +49,7 @@ export const project: Project = {
       },
     ],
   },
-  hero: "/images/showcase/marketgoo-content-auto-optimization/content-auto-optimization-hero.png",
+  hero: heroImage,
   context: {
     items: [
       {
@@ -75,12 +88,7 @@ export const project: Project = {
   process: {
     subtitle:
       "From research to delivery, the process balanced user and business needs.",
-    images: [
-      "/images/showcase/marketgoo-content-auto-optimization/process/content-auto-optimization-process-1.png",
-      "/images/showcase/marketgoo-content-auto-optimization/process/content-auto-optimization-process-2.png",
-      "/images/showcase/marketgoo-content-auto-optimization/process/content-auto-optimization-process-3.png",
-      "/images/showcase/marketgoo-content-auto-optimization/process/content-auto-optimization-process-4.png",
-    ],
+    images: [processImage1, processImage2, processImage3, processImage4],
     items: [
       {
         title: "Research",
@@ -108,23 +116,23 @@ export const project: Project = {
     rows: [
       [
         {
-          src: "/images/showcase/marketgoo-content-auto-optimization/gallery/content-auto-optimization-gallery-1-1-1.png",
+          src: galleryImage1_1,
           alt: "Content Auto-Optimization interface",
           width: "2/5",
         },
         {
-          src: "/images/showcase/marketgoo-content-auto-optimization/gallery/content-auto-optimization-gallery-1-1-2.png",
+          src: galleryImage1_2,
           alt: "marketgoo logo",
         },
       ],
       [
         {
-          src: "/images/showcase/marketgoo-content-auto-optimization/gallery/content-auto-optimization-gallery-1-2-1.png",
+          src: galleryImage2_1,
           alt: "AI optimization flow",
           width: "4/5",
         },
         {
-          src: "/images/showcase/marketgoo-content-auto-optimization/gallery/content-auto-optimization-gallery-1-2-2.png",
+          src: galleryImage2_2,
           alt: "Optimization results",
         },
       ],
@@ -135,17 +143,17 @@ export const project: Project = {
       {
         title: "+15% SEO score",
         text: "Users optimize more pages, resulting in measurable improvements in overall SEO performance.",
-        icon: "/images/showcase/marketgoo-content-auto-optimization/outcomes/content-auto-optimization-outcome-1.svg",
+        icon: outcomeIcon1,
       },
       {
         title: "+90% partner adoption",
         text: "The AI optimization feature was widely adopted by partners, validating the solution and supporting business goals.",
-        icon: "/images/showcase/marketgoo-content-auto-optimization/outcomes/content-auto-optimization-outcome-2.svg",
+        icon: outcomeIcon2,
       },
       {
         title: "Reduced effort and friction",
         text: "The new workflow made optimization faster and simpler, removing repetitive tasks and lowering cognitive load.",
-        icon: "/images/showcase/marketgoo-content-auto-optimization/outcomes/content-auto-optimization-outcome-3.svg",
+        icon: outcomeIcon3,
       },
     ],
   },

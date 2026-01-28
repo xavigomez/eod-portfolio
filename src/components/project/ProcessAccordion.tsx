@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { ImageMetadata } from "astro";
 import {
   Accordion,
   AccordionContent,
@@ -13,7 +14,7 @@ interface ProcessItem {
 
 interface ProcessAccordionProps {
   process: ProcessItem[];
-  images: string[];
+  images: ImageMetadata[];
   projectSlug: string;
   className?: string;
 }
@@ -34,8 +35,8 @@ export function ProcessAccordion({
       >
         {images.map((src, index) => (
           <img
-            key={src}
-            src={src}
+            key={index}
+            src={src.src}
             alt=""
             className={`rounded-4xl w-full h-full object-cover absolute inset-0 transition-all duration-300 ease-out ${
               index === activeIndex ? "opacity-100" : "opacity-0"

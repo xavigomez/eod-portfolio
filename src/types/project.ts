@@ -1,9 +1,10 @@
+import type { ImageMetadata } from "astro";
 import type { GalleryRow } from "./gallery";
 
 export interface ProjectMeta {
   title: string;
   description: string;
-  image: string;
+  image: ImageMetadata;
 }
 
 export interface ProjectTag {
@@ -39,7 +40,7 @@ export interface ProjectProcessItem {
 
 export interface ProjectProcess {
   subtitle: string;
-  images: string[];
+  images: ImageMetadata[];
   items: ProjectProcessItem[];
 }
 
@@ -50,7 +51,7 @@ export interface ProjectGallery {
 export interface ProjectOutcomeItem {
   title: string;
   text: string;
-  icon: string;
+  icon: ImageMetadata;
 }
 
 export interface ProjectOutcomes {
@@ -61,7 +62,7 @@ export interface Project {
   meta: ProjectMeta;
   slug: string;
   header: ProjectHeader;
-  hero: string;
+  hero: ImageMetadata;
   context: ProjectContext;
   highlight: ProjectHighlight;
   process: ProjectProcess;

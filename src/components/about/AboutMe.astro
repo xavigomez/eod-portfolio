@@ -1,26 +1,36 @@
 ---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
 interface Props {
     class?: string;
-    image: string;
+    image: ImageMetadata;
     bio: string[];
 }
 
 const { class: className, image, bio } = Astro.props;
 ---
 
-<section id="me" class:list={["flex gap-6 md:gap-8 flex-col md:flex-row", className]}>
+<section
+    id="me"
+    class:list={["flex gap-6 md:gap-8 flex-col md:flex-row", className]}
+>
     <div class="w-full md:w-1/2 flex justify-center md:justify-start">
         <div class="gallery-item w-full max-w-sm rounded-2xl">
-            <img
+            <Image
                 src={image}
                 alt="Elisabet Osuna"
                 class="aspect-auto"
+                loading="eager"
+                fetchpriority="high"
             />
         </div>
     </div>
     <div class="w-full md:w-1/2 space-y-4">
-        {bio.map((paragraph) => (
-            <p class="text-base leading-relaxed" set:html={paragraph} />
-        ))}
+        {
+            bio.map((paragraph) => (
+                <p class="text-base leading-relaxed" set:html={paragraph} />
+            ))
+        }
     </div>
 </section>

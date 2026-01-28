@@ -1,12 +1,14 @@
 ---
+import { Image } from "astro:assets";
 import type { Width, GalleryRow } from "~/types/gallery";
 
 interface Props {
     class?: string;
     rows: GalleryRow[];
+    priority?: boolean;
 }
 
-const { class: className, rows } = Astro.props;
+const { class: className, rows, priority = false } = Astro.props;
 
 const widthClasses: Record<Width, string> = {
     "1/6": "w-1/6",
@@ -26,10 +28,20 @@ const widthClasses: Record<Width, string> = {
         rows.map((row) => (
             <div class="gallery-row">
                 <div class:list={["gallery-item", widthClasses[row[0].width]]}>
-                    <img src={row[0].src} alt={row[0].alt} />
+                    <Image
+                        src={row[0].src}
+                        alt={row[0].alt}
+                        loading={priority ? "eager" : "lazy"}
+                        fetchpriority={priority ? "high" : "auto"}
+                    />
                 </div>
                 <div class="gallery-item flex-1">
-                    <img src={row[1].src} alt={row[1].alt} />
+                    <Image
+                        src={row[1].src}
+                        alt={row[1].alt}
+                        loading={priority ? "eager" : "lazy"}
+                        fetchpriority={priority ? "high" : "auto"}
+                    />
                 </div>
             </div>
         ))

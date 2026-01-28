@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { Button } from "~/components/ui/button";
 import { Badge } from "~/components/ui/badge";
 import type { WorkShowcase } from "~/types/work";
@@ -62,7 +63,11 @@ const getRotation = (prev?: number) => {
                 class="project-card tilt-card rounded-4xl bg-white border p-4 border-foreground flex flex-col sm:flex-row gap-4 cursor-pointer shadow-lg"
             >
                 <div class="project-image sm:w-1/2 h-52">
-                    <img src={project.image} alt={project.imageAlt} />
+                    <Image
+                        src={project.image}
+                        alt={project.imageAlt}
+                        loading="lazy"
+                    />
                 </div>
                 <div class="sm:w-1/2 flex flex-col gap-4 justify-between">
                     <div class="space-y-2">

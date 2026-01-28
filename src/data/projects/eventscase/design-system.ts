@@ -1,10 +1,25 @@
 import type { Project } from "~/types/project";
 
+// Images
+import heroImage from "~/assets/images/showcase/eventscase-design-system/design-system-hero.png";
+import processImage1 from "~/assets/images/showcase/eventscase-design-system/process/design-system-process-1.png";
+import processImage2 from "~/assets/images/showcase/eventscase-design-system/process/design-system-process-2.png";
+import processImage3 from "~/assets/images/showcase/eventscase-design-system/process/design-system-process-3.png";
+import processImage4 from "~/assets/images/showcase/eventscase-design-system/process/design-system-process-4.png";
+import processImage5 from "~/assets/images/showcase/eventscase-design-system/process/design-system-process-5.png";
+import galleryImage1_1 from "~/assets/images/showcase/eventscase-design-system/gallery/design-system-gallery-1-1-1.png";
+import galleryImage1_2 from "~/assets/images/showcase/eventscase-design-system/gallery/design-system-gallery-1-1-2.png";
+import galleryImage2_1 from "~/assets/images/showcase/eventscase-design-system/gallery/design-system-gallery-1-2-1.png";
+import galleryImage2_2 from "~/assets/images/showcase/eventscase-design-system/gallery/design-system-gallery-1-2-2.png";
+import outcomeIcon1 from "~/assets/images/showcase/eventscase-design-system/outcomes/design-system-outcome-1.svg";
+import outcomeIcon2 from "~/assets/images/showcase/eventscase-design-system/outcomes/design-system-outcome-2.svg";
+import outcomeIcon3 from "~/assets/images/showcase/eventscase-design-system/outcomes/design-system-outcome-3.svg";
+
 export const project: Project = {
   meta: {
     title: "Design System",
     description: "Multi-brand new design system adapted to the new branding.",
-    image: "/images/showcase/eventscase-design-system/design-system-hero.png",
+    image: heroImage,
   },
   slug: "eventscase-design-system",
   header: {
@@ -33,7 +48,7 @@ export const project: Project = {
       },
     ],
   },
-  hero: "/images/showcase/eventscase-design-system/design-system-hero.png",
+  hero: heroImage,
   context: {
     items: [
       {
@@ -67,11 +82,11 @@ export const project: Project = {
     subtitle:
       "A structured process to build a scalable and consistent design system.",
     images: [
-      "/images/showcase/eventscase-design-system/process/design-system-process-1.png",
-      "/images/showcase/eventscase-design-system/process/design-system-process-2.png",
-      "/images/showcase/eventscase-design-system/process/design-system-process-3.png",
-      "/images/showcase/eventscase-design-system/process/design-system-process-4.png",
-      "/images/showcase/eventscase-design-system/process/design-system-process-5.png",
+      processImage1,
+      processImage2,
+      processImage3,
+      processImage4,
+      processImage5,
     ],
     items: [
       {
@@ -105,23 +120,23 @@ export const project: Project = {
     rows: [
       [
         {
-          src: "/images/showcase/eventscase-design-system/gallery/design-system-gallery-1-1-1.png",
+          src: galleryImage1_1,
           alt: "Design system components overview",
           width: "2/5",
         },
         {
-          src: "/images/showcase/eventscase-design-system/gallery/design-system-gallery-1-1-2.png",
+          src: galleryImage1_2,
           alt: "Design system documentation",
         },
       ],
       [
         {
-          src: "/images/showcase/eventscase-design-system/gallery/design-system-gallery-1-2-1.png",
+          src: galleryImage2_1,
           alt: "Component library in Figma",
           width: "4/5",
         },
         {
-          src: "/images/showcase/eventscase-design-system/gallery/design-system-gallery-1-2-2.png",
+          src: galleryImage2_2,
           alt: "Design tokens",
         },
       ],
@@ -132,17 +147,17 @@ export const project: Project = {
       {
         title: "Faster delivery across teams",
         text: "enabling product and engineering teams to build and ship features more quickly through shared components and a unified system.",
-        icon: "/images/showcase/eventscase-design-system/outcomes/design-system-outcome-1.svg",
+        icon: outcomeIcon1,
       },
       {
         title: "Reduced UI-related bugs",
         text: "minimizing inconsistencies and errors by replacing incorrect or ad-hoc components and layouts with standardized ones.",
-        icon: "/images/showcase/eventscase-design-system/outcomes/design-system-outcome-2.svg",
+        icon: outcomeIcon2,
       },
       {
         title: "Scalable multi-product foundation",
         text: "allowing multiple products and brands to evolve on top of a single system while maintaining consistency and control. As white label!",
-        icon: "/images/showcase/eventscase-design-system/outcomes/design-system-outcome-3.svg",
+        icon: outcomeIcon3,
       },
     ],
   },

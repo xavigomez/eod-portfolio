@@ -1,37 +1,52 @@
 import type { GalleryRow } from "~/types/gallery";
 import type { WorkShowcase } from "~/types/work";
 
+// Gallery images
+import gallery1_1 from "~/assets/images/home/gallery/home-gallery-1-1.png";
+import gallery1_2 from "~/assets/images/home/gallery/home-gallery-1-2.png";
+import gallery2_1 from "~/assets/images/home/gallery/home-gallery-2-1.png";
+import gallery2_2 from "~/assets/images/home/gallery/home-gallery-2-2.png";
+import gallery3_1 from "~/assets/images/home/gallery/home-gallery-3-1.png";
+import gallery3_2 from "~/assets/images/home/gallery/home-gallery-3-2.png";
+
+// Showcase images
+import showcaseMarketgoo0 from "~/assets/images/home/showcase/home-showcase-marketgoo-0.png";
+import showcaseMarketgoo1 from "~/assets/images/home/showcase/home-showcase-marketgoo-1.png";
+import showcaseEventscase0 from "~/assets/images/home/showcase/home-showcase-eventscase-0.png";
+import showcaseEventscase1 from "~/assets/images/home/showcase/home-showcase-eventscase-1.png";
+import showcaseDeclarando from "~/assets/images/home/showcase/home-showcase-declarando.png";
+
 export const gallery: GalleryRow[] = [
   [
     {
-      src: "/images/home/gallery/home-gallery-1-1.png",
+      src: gallery1_1,
       alt: "Sheep on a green field",
       width: "1/5",
     },
     {
-      src: "/images/home/gallery/home-gallery-1-2.png",
+      src: gallery1_2,
       alt: "Tokyo skyline at dusk with mount Fuji in the background",
     },
   ],
   [
     {
-      src: "/images/home/gallery/home-gallery-2-1.png",
+      src: gallery2_1,
       alt: "Tree trunk showing different shades of green and brown",
       width: "4/6",
     },
     {
-      src: "/images/home/gallery/home-gallery-2-2.png",
+      src: gallery2_2,
       alt: "Typical japanese meal consisting in udon, soup and friend shrimp",
     },
   ],
   [
     {
-      src: "/images/home/gallery/home-gallery-3-1.png",
+      src: gallery3_1,
       alt: "Three linoleum prints depicting a llama, an sloth and a capibara with funny affirming messages",
       width: "5/6",
     },
     {
-      src: "/images/home/gallery/home-gallery-3-2.png",
+      src: gallery3_2,
       alt: "A frog based on a classic japanese woodblock printing design",
     },
   ],
@@ -50,7 +65,7 @@ export const work: WorkShowcase[] = [
         title: "Content Auto-Optimization",
         description:
           "AI-powered, automated content optimization for non-technical users.",
-        image: "/images/home/showcase/home-showcase-marketgoo-0.png",
+        image: showcaseMarketgoo0,
         imageAlt:
           "Screenshot of the Content Auto-Optimization feature interface",
         href: "/project/marketgoo-content-auto-optimization",
@@ -69,7 +84,7 @@ export const work: WorkShowcase[] = [
         title: "Smarter onboarding",
         description:
           "Reducing friction and helping users reach first value faster.",
-        image: "/images/home/showcase/home-showcase-marketgoo-1.png",
+        image: showcaseMarketgoo1,
         imageAlt: "Screenshot of the Smarter Onboarding flow interface",
         href: "/project/marketgoo-smarter-onboarding", // TODO: Add project data
         tags: [
@@ -97,7 +112,7 @@ export const work: WorkShowcase[] = [
         title: "Digital Venue",
         description:
           "A new tool designed to easily host remote and hybrid events.",
-        image: "/images/home/showcase/home-showcase-eventscase-0.png",
+        image: showcaseEventscase0,
         imageAlt: "Screenshot of the Digital Venue virtual event platform",
         href: "/project/eventscase-digital-venue",
         tags: [
@@ -115,7 +130,7 @@ export const work: WorkShowcase[] = [
         title: "Design System",
         description:
           "Multi-brand new design system adapted to the new branding.",
-        image: "/images/home/showcase/home-showcase-eventscase-1.png",
+        image: showcaseEventscase1,
         imageAlt: "Screenshot of the Eventscase Design System components",
         href: "/project/eventscase-design-system",
         tags: [
@@ -143,7 +158,7 @@ export const work: WorkShowcase[] = [
         title: "Renta Revamp",
         description:
           "Simplify and automate the renta process to help users save time and money.",
-        image: "/images/home/showcase/home-showcase-declarando.png",
+        image: showcaseDeclarando,
         imageAlt: "Screenshot of the Declarando Renta Revamp interface",
         href: "/project/declarando-renta-revamp", // TODO: Add project data
         tags: [

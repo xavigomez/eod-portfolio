@@ -1,3 +1,5 @@
+import type { ImageMetadata } from "astro";
+
 export type Width =
   | "1/6"
   | "2/6"
@@ -10,7 +12,7 @@ export type Width =
   | "4/5";
 
 export interface GalleryImage {
-  src: string;
+  src: ImageMetadata;
   alt: string;
 }
 

@@ -1,5 +1,10 @@
 import type { AboutData } from "~/types/about";
 
+// Images
+import meImage from "~/assets/images/me.jpg";
+import testimonial1 from "~/assets/images/about/about-testimonials-1.png";
+import testimonial2 from "~/assets/images/about/about-testimonials-2.png";
+
 export const about: AboutData = {
   meta: {
     title: "About me",
@@ -7,7 +12,7 @@ export const about: AboutData = {
       "Product designer with over 6 years of experience, combining analytical thinking with creative problem-solving.",
     image: "https://placehold.co/1200x630/f5f5f4/1c1917?text=About+Me", // FIXME: Add proper OG image for about page (1200x630px)
   },
-  image: "/images/me.jpg",
+  image: meImage,
   bio: [
     `I'm a curious and <strong>creative</strong> person with a strong <strong>analytical</strong> mindset. I initially explored engineering because I enjoy understanding how things work and solving complex problems, but I later shifted toward design. That journey led me to <strong>product design</strong>, where I found the perfect balance between creativity and analysis.`,
     `I have over <strong>6 years of experience</strong> working as a product designer across different companies, teams, industries, and digital products. This variety has helped me develop a <strong>broad perspective, adapt quickly to new contexts, and grow continuously</strong> as a professional. I enjoy collaborating closely with cross-functional teams to turn complex problems into clear, usable solutions.`,
@@ -40,7 +45,7 @@ export const about: AboutData = {
   ],
   reviews: [
     {
-      avatar: "/images/about/about-testimonials-1.png",
+      avatar: testimonial1,
       name: "Clara Palomar",
       role: "Senior Product Designer",
       quote:
@@ -49,7 +54,7 @@ export const about: AboutData = {
       year: "2019",
     },
     {
-      avatar: "/images/about/about-testimonials-2.png",
+      avatar: testimonial2,
       name: "Daniel García Martín",
       role: "Senior Product Designer",
       quote:

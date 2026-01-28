@@ -1,3 +1,5 @@
+import type { ImageMetadata } from "astro";
+
 export type ProjectTagIcon = "chevron-up" | "chevron-down";
 
 export type Tag =
@@ -7,7 +9,7 @@ export type Tag =
 export interface Project {
   title: string;
   description: string;
-  image: string;
+  image: ImageMetadata;
   imageAlt: string;
   href: string;
   tags: Tag[];

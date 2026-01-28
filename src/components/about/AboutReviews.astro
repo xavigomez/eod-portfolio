@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import type { Review } from "~/types/about";
 
 interface Props {
@@ -18,10 +19,11 @@ const { class: className, items } = Astro.props;
             items.map((review) => (
                 <article class="tilt-card border border-foreground flex flex-col bg-white shadow-lg">
                     <div class="p-6 space-y-4 flex-1">
-                        <img
+                        <Image
                             src={review.avatar}
                             alt={review.name}
                             class="size-16 rounded-full object-cover"
+                            loading="lazy"
                         />
                         <div>
                             <h3 class="font-bold text-lg">{review.name}</h3>

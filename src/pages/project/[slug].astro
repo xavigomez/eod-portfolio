@@ -1,5 +1,6 @@
 ---
 import { projects } from "~/data/projects";
+import { Image } from "astro:assets";
 
 import MainLayout from "~/layouts/Main.astro";
 import HeadProject from "~/components/head/HeadProject.astro";
@@ -77,10 +78,14 @@ const getRotation = (prev?: number) => {
             </div>
         </section>
         <section id="project_hero-image" class="gallery-item rounded-2xl">
-            <img
+            <Image
                 src={project.hero}
                 alt={project.header.title}
+                width={1200}
+                height={800}
                 class="w-full rounded-2xl"
+                loading="eager"
+                fetchpriority="high"
             />
         </section>
         <section id="project_context" class="space-y-12">
@@ -137,10 +142,13 @@ const getRotation = (prev?: number) => {
                     project.outcomes.items.map((outcome) => {
                         return (
                             <div>
-                                <img
+                                <Image
                                     src={outcome.icon}
                                     alt={outcome.title}
+                                    width={96}
+                                    height={96}
                                     class="max-w-24"
+                                    loading="lazy"
                                 />
                                 <h4 class="text-2xl font-bold">
                                     {outcome.title}
