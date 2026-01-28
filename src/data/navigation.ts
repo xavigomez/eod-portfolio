@@ -49,7 +49,7 @@ const links: NavLink[] = [
   },
 ];
 
-// TODO: add real socials data
+// FIXME: add real socials data
 const socials: Social[] = [
   {
     icon: Linkedin,

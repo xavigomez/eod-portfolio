@@ -15,7 +15,7 @@ import outcomeIcon2 from "~/assets/images/showcase/eventscase-digital-venue/outc
 import outcomeIcon3 from "~/assets/images/showcase/eventscase-digital-venue/outcomes/digital-venue-outcome-3.svg";
 
 export const project: Project = {
-  // TODO: Add relevant meta data here, let's talk to @Eli about this.
+  // FIXME: Add relevant meta data here, let's talk to @Eli about this.
   meta: {
     title: "Digital Venue",
     description: "A new tool designed to easily host remote and hybrid events.",

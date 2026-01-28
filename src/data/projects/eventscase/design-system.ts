@@ -16,6 +16,7 @@ import outcomeIcon2 from "~/assets/images/showcase/eventscase-design-system/outc
 import outcomeIcon3 from "~/assets/images/showcase/eventscase-design-system/outcomes/design-system-outcome-3.svg";
 
 export const project: Project = {
+  // FIXME: Verify and confirm all meta data with @Eli
   meta: {
     title: "Design System",
     description: "Multi-brand new design system adapted to the new branding.",

@@ -15,6 +15,7 @@ import outcomeIcon2 from "~/assets/images/showcase/marketgoo-content-auto-optimi
 import outcomeIcon3 from "~/assets/images/showcase/marketgoo-content-auto-optimization/outcomes/content-auto-optimization-outcome-3.svg";
 
 export const project: Project = {
+  // FIXME: Verify and confirm all meta data with @Eli
   meta: {
     title: "Content Auto-Optimization",
     description:
