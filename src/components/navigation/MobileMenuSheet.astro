@@ -1,0 +1,48 @@
+---
+import { Menu } from "@lucide/astro";
+import Button from "~/components/starwind/button/Button.astro";
+import Sheet from "~/components/starwind/sheet/Sheet.astro";
+import SheetTrigger from "~/components/starwind/sheet/SheetTrigger.astro";
+import SheetContent from "~/components/starwind/sheet/SheetContent.astro";
+import SheetTitle from "~/components/starwind/sheet/SheetTitle.astro";
+import SheetClose from "~/components/starwind/sheet/SheetClose.astro";
+---
+
+<Sheet>
+    <SheetTrigger asChild>
+        <Button
+            variant="outline"
+            class="text-muted-foreground border-muted-foreground bg-white cursor-pointer"
+        >
+            <Menu class="size-4" />
+        </Button>
+    </SheetTrigger>
+    <SheetContent side="right">
+        <SheetTitle class="sr-only">Navigation menu</SheetTitle>
+        <slot />
+    </SheetContent>
+</Sheet>
+
+<script>
+    // Close sheet when a link is clicked
+    function setupSheetLinkClose() {
+        const sheetContent = document.querySelector(
+            '[data-slot="sheet-content"]',
+        );
+        const sheetClose = document.querySelector('[data-slot="sheet-close"]');
+
+        if (sheetContent && sheetClose) {
+            sheetContent.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    (sheetClose as HTMLButtonElement).click();
+                });
+            });
+        }
+    }
+
+    // Run on page load
+    setupSheetLinkClose();
+
+    // Re-run after Astro view transitions
+    document.addEventListener("astro:after-swap", setupSheetLinkClose);
+</script>

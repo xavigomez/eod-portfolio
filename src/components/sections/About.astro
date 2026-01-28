@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { Button } from "~/components/ui/button";
+import Button from "~/components/starwind/button/Button.astro";
 import meImage from "~/assets/images/me.jpg";
 
 interface Props {
@@ -39,9 +39,7 @@ const { class: className } = Astro.props;
                 into clear, user-centered solutions with real business impact.
             </p>
             <p class="text-xl font-bold">Do you want to know more?</p>
-            <Button size="lg">
-                <a href="/about-me">More about me</a>
-            </Button>
+            <Button size="lg" href="/about-me">More about me</Button>
         </div>
     </div>
 </section>

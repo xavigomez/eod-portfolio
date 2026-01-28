@@ -1,0 +1,109 @@
+---
+import type { ImageMetadata } from "astro";
+import Accordion from "~/components/starwind/accordion/Accordion.astro";
+import AccordionItem from "~/components/starwind/accordion/AccordionItem.astro";
+import AccordionTrigger from "~/components/starwind/accordion/AccordionTrigger.astro";
+import AccordionContent from "~/components/starwind/accordion/AccordionContent.astro";
+
+interface ProcessItem {
+    title: string;
+    content: string;
+}
+
+interface Props {
+    process: ProcessItem[];
+    images: ImageMetadata[];
+    projectSlug: string;
+    class?: string;
+}
+
+const { process, images, projectSlug, class: className } = Astro.props;
+---
+
+<div class:list={["process-accordion flex gap-23", className]} data-project-slug={projectSlug}>
+    <div
+        class="process-images gallery-item hidden md:block rounded-4xl w-50 h-67 lg:w-70 lg:h-93 xl:w-90 xl:h-120 shrink-0 relative overflow-hidden"
+        style="perspective: 1000px;"
+    >
+        {images.map((src, index) => (
+            <img
+                src={src.src}
+                alt=""
+                class:list={[
+                    "rounded-4xl w-full h-full object-cover absolute inset-0 transition-all duration-300 ease-out",
+                    index === 0 ? "opacity-100" : "opacity-0"
+                ]}
+                data-process-image={index}
+            />
+        ))}
+    </div>
+    <div class="flex-1 space-y-6">
+        <Accordion type="single" defaultValue={`${projectSlug}-1`}>
+            {process.map((item, index) => {
+                const order = index + 1;
+                return (
+                    <AccordionItem value={`${projectSlug}-${order}`}>
+                        <AccordionTrigger class="cursor-pointer">
+                            <h3 class="text-2xl font-semibold">
+                                0{order}. {item.title}
+                            </h3>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                            <p class="text-base" set:html={item.content} />
+                        </AccordionContent>
+                    </AccordionItem>
+                );
+            })}
+        </Accordion>
+    </div>
+</div>
+
+<script>
+    function setupProcessAccordion() {
+        document.querySelectorAll('.process-accordion').forEach((container) => {
+            const projectSlug = container.getAttribute('data-project-slug');
+            const images = container.querySelectorAll('[data-process-image]');
+            const accordionItems = container.querySelectorAll('.starwind-accordion-item');
+
+            // Create a MutationObserver to watch for data-state changes
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.attributeName === 'data-state') {
+                        const item = mutation.target as HTMLElement;
+                        const state = item.getAttribute('data-state');
+
+                        if (state === 'open') {
+                            // Find the index of this item
+                            const value = item.getAttribute('data-value');
+                            if (value) {
+                                const index = parseInt(value.split('-').pop() || '1', 10) - 1;
+
+                                // Update image visibility
+                                images.forEach((img, imgIndex) => {
+                                    if (imgIndex === index) {
+                                        img.classList.remove('opacity-0');
+                                        img.classList.add('opacity-100');
+                                    } else {
+                                        img.classList.remove('opacity-100');
+                                        img.classList.add('opacity-0');
+                                    }
+                                });
+                            }
+                        }
+                    }
+                });
+            });
+
+            // Observe each accordion item for state changes
+            accordionItems.forEach((item) => {
+                observer.observe(item, { attributes: true, attributeFilter: ['data-state'] });
+            });
+        });
+    }
+
+    // Run on page load
+    setupProcessAccordion();
+
+    // Re-run after Astro view transitions
+    document.addEventListener('astro:after-swap', setupProcessAccordion);
+</script>

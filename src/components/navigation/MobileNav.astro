@@ -3,7 +3,7 @@ import Branding from "~/components/navigation/Branding.astro";
 import NavLinks from "~/components/navigation/NavLinks.astro";
 import SocialLinks from "~/components/navigation/SocialLinks.astro";
 import DownloadCV from "~/components/navigation/DownloadCV.astro";
-import { MobileMenuSheet } from "~/components/navigation/MobileMenuSheet";
+import MobileMenuSheet from "~/components/navigation/MobileMenuSheet.astro";
 ---
 
 <nav class="flex justify-between items-center" aria-label="Mobile navigation">
@@ -12,7 +12,7 @@ import { MobileMenuSheet } from "~/components/navigation/MobileMenuSheet";
     </div>
     <div class="flex items-center gap-4">
         <DownloadCV class="hidden sm:flex bg-muted-foreground" />
-        <MobileMenuSheet client:load>
+        <MobileMenuSheet>
             <!-- FIXME: the close button is over a link and its hard to hit -->
             <nav aria-label="Mobile menu navigation">
                 <NavLinks />

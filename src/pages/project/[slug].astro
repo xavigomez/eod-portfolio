@@ -7,8 +7,8 @@ import HeadProject from "~/components/head/HeadProject.astro";
 import Contact from "~/components/sections/Contact.astro";
 import Gallery from "~/components/sections/Gallery.astro";
 
-import { Badge } from "~/components/ui/badge";
-import { ProcessAccordion } from "~/components/project/ProcessAccordion";
+import Badge from "~/components/starwind/badge/Badge.astro";
+import ProcessAccordion from "~/components/project/ProcessAccordion.astro";
 
 export function getStaticPaths() {
     return projects.map((project) => ({
@@ -62,8 +62,8 @@ const getRotation = (prev?: number) => {
                             prev = rotation;
                             return (
                                 <Badge
-                                    variant={"outline"}
-                                    className="border-foreground bg-white md:px-3 md:py-1 md:text-base"
+                                    variant="outline"
+                                    class="border-foreground bg-white md:px-3 md:py-1 md:text-base"
                                     style={{
                                         transform: `rotate(${rotation}deg)`,
                                     }}
@@ -121,7 +121,6 @@ const getRotation = (prev?: number) => {
                     process={project.process.items}
                     images={project.process.images}
                     projectSlug={project.slug}
-                    client:load
                 />
             </div>
         </section>

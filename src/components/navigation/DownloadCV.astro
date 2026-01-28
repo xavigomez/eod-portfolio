@@ -1,5 +1,5 @@
 ---
-import { Button } from "~/components/ui/button";
+import Button from "~/components/starwind/button/Button.astro";
 import { Download } from "@lucide/astro";
 
 interface Props {
@@ -9,12 +9,10 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<Button className={className}>
-    <a
-        href="/files/cv.pdf"
-        download
-        class="flex items-center gap-2 font-bold cursor-pointer"
-    >
-        <Download /><span>Download CV</span>
-    </a>
+<Button
+    class:list={["font-bold cursor-pointer", className]}
+    href="/files/cv.pdf"
+    download
+>
+    <Download /><span>Download CV</span>
 </Button>

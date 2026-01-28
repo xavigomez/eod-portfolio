@@ -1,5 +1,5 @@
 ---
-import { Badge } from "~/components/ui/badge";
+import Badge from "~/components/starwind/badge/Badge.astro";
 
 interface Props {
     class?: string;
@@ -8,7 +8,7 @@ interface Props {
 const { class: className } = Astro.props;
 
 const badgeContainerClasses =
-    "[&>span]:px-3 [&>span]:py-2 [&>span]:text-base [&>span]:bg-white [&>span]:border-foreground flex flex-wrap gap-2";
+    "[&>div]:px-3 [&>div]:py-2 [&>div]:text-base [&>div]:bg-white [&>div]:border-foreground flex flex-wrap gap-2";
 
 const statusIndicatorClasses =
     "relative flex items-center justify-center size-3 mr-2";
@@ -24,7 +24,7 @@ const badgeTextClasses = "font-medium";
 ---
 
 <section id="badges" class:list={[badgeContainerClasses, className]}>
-    <Badge variant="outline" className="relative group">
+    <Badge variant="outline" class="relative group">
         <span class={statusIndicatorClasses} aria-hidden="true">
             <span class={pingCircleClasses}></span>
             <span class={pulseCircleClasses}></span>

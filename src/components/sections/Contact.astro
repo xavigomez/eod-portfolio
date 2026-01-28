@@ -1,5 +1,5 @@
 ---
-import { Button } from "~/components/ui/button";
+import Button from "~/components/starwind/button/Button.astro";
 
 interface Props {
     class?: string;
@@ -16,14 +16,15 @@ const { class: className } = Astro.props;
     ]}
 >
     <p class="text-center text-3xl [&>span]:underline [&>span]:font-bold">
-        If you’re looking for a <span>product designer</span> or just want to chat
-        about ideas, feel free to <span>drop me a message</span>. I’m always
+        If you're looking for a <span>product designer</span> or just want to chat
+        about ideas, feel free to <span>drop me a message</span>. I'm always
         happy to connect.
     </p>
     <Button
-        variant={"secondary"}
-        className="rounded-full p-0 text-base font-bold"
+        variant="secondary"
+        class="rounded-full py-2.5 px-20 text-base font-bold"
+        href="mailto:example@email.com"
     >
-        <a class="py-2.5 px-20" href="mailto:example@email.com">Let's talk</a>
+        Let's talk
     </Button>
 </section>
